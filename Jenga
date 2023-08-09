@@ -33,5 +33,5 @@ end)
 --Deadly Buttons
 
 DeadlySection:NewButton("DeadlyHub", nil, function()
-	loadstring(game:HttpGet("https://pastebin.com/raw/c1zum1xM"))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/DeadlyHub'))()
 end)
