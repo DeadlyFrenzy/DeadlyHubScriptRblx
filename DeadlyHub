@@ -118,7 +118,7 @@ GamesSection:NewButton("IceHub", "", function()
 end)
  
 GamesSection:NewButton("Jenga/Blocks n' Props", nil, function()
-    loadstring(game:HttpGet(('https://pastebin.com/8PVHze4r'),true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/Jenga'))()
 end)
  
 GamesSection:NewButton("🔪MM2🔪", "", function()
