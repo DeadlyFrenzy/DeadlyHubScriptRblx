@@ -27,7 +27,6 @@ end)
 
 MainSection:NewButton("Reset", "Resets your character.", function()
 game.Players.LocalPlayer.Character["Head"]:Destroy()
-game.Players.LocalPlayer.Character["HumanoidRootPart"]:Destroy()
 end)
 
 --Deadly Buttons
