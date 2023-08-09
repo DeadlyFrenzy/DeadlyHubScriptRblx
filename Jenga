@@ -17,6 +17,12 @@ MainSection:NewButton("End Game", "Only use on towers team", function()
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-65.85745239257812, 99.9999771118164, -18.305282592773438)
 end)
 
+MainSection:NewButton("Infinite Jump", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/infjump/main/main"))()
+end)
+
+
+
 MainSection:NewButton("NoKillBrick", "Removes the maps killbricks.", function()
 game.Workspace.Map.Classic.KillBrick:Destroy()
 end)
