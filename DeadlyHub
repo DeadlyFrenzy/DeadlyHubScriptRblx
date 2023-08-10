@@ -1,10 +1,10 @@
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Notification";
-    Text = "DeadlyHub is loading in!"
+    Text = "DeadlyHub"
 })
 
 
-wait(5)
+
 local Libary = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = kavoUi.CreateLib("DeadlyHub","Synapse")
  
