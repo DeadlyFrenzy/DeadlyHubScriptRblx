@@ -101,7 +101,23 @@ MainSection:NewButton("Airswim", nil, function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/airswim/main/main"))()
 end)
  
- 
+ local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+PlayerSection:NewTextBox("Enter WalkSpeed", "Enter WalkSpeed", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (txt)
+end)
+
+PlayerSection:NewButton("Reset WalkSpeed", "Reset WalkSpeed", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+PlayerSection:NewTextBox("Enter JumpPower", "Enter JumpPower", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = (txt)
+end)
+
+PlayerSection:NewButton("Reset JumpPower", "Reset JumpPower", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
  
  
  
