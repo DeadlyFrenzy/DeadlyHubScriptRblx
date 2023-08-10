@@ -119,7 +119,10 @@ PlayerSection:NewButton("Reset JumpPower", "Reset JumpPower", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
  
- 
+ PlayerSection:NewTextBox("Teleport To Player", "Teleports To Player", function(tp)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tp].Character.HumanoidRootPart.CFrame
+    local Victim = tp
+end)
  
  
  
