@@ -119,12 +119,18 @@ PlayerSection:NewButton("Reset JumpPower", "Reset JumpPower", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
  
- PlayerSection:NewTextBox("Teleport To Player", "Teleports To Player", function(tp)
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tp].Character.HumanoidRootPart.CFrame
-    local Victim = tp
+ PlayerSection:NewTextBox("Teleport To Player", "Teleports To Player", function(p2)
+local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local beforetppos = p1.CFrame
+
+p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
 end)
- 
- 
+
+PlayerSection:NewButton("Go to pos before tp", "Go to pos before tp", function()
+    p1.CFrame = beforetppos
+end)
+
+
  
 local Games = Window:NewTab("Games🎮")
 local GamesSection = Games:NewSection("Games")
