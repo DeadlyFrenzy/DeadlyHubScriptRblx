@@ -231,8 +231,41 @@ end)
  
 local Misc = Window:NewTab("Misc")
 local MiscSection = Misc:NewSection("Misc")
+
+MiscSection:NewButton("Rejoin", nil, function()
+    local ts = game:GetService("TeleportService")
+ 
+local p = game:GetService("Players").LocalPlayer
  
  
+ 
+ts:Teleport(game.PlaceId, p)
+end)
+
+MiscSection:NewButton("Super Tools", "Super Tools", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
+end)
+
+MiscSection:NewButton("Btools", "Btools", function()
+    Instance.new("HopperBin", game.Players.LocalPlayer.Backpack).BinType = 4
+end)
+
+MiscSection:NewButton("Walk On Walls", "Walk On Walls", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/RY9cBbdG'),true))()
+end)
+
+MiscSection:NewButton("Replication Ui", "Replication Ui", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/rM0LU2mJ'),true))()
+end)
+
+MiscSection:NewButton("Chat Translator", "Chat Translator", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/WSBZiDNe'),true))()
+end)
+
+MiscSection:NewButton("Tall R15", "Tall R15", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/MXstG0Qd'))()
+end)
+
 MiscSection:NewButton("Keyboard", nil, function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
@@ -258,15 +291,7 @@ MiscSection:NewButton("Ghost Hub", nil, function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
 end)
  
-MiscSection:NewButton("Rejoin", nil, function()
-    local ts = game:GetService("TeleportService")
- 
-local p = game:GetService("Players").LocalPlayer
- 
- 
- 
-ts:Teleport(game.PlaceId, p)
-end)
+
  
 local DiscordTab = Window:NewTab("Discord")
 local DiscordSection = DiscordTab:NewSection("Discord")
