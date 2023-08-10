@@ -1,13 +1,67 @@
-local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Notification";
+    Text = "DeadlyHub is loading in!"
+})
+
+
+wait(5)
+local Libary = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = kavoUi.CreateLib("DeadlyHub","Synapse")
  
  
- 
+ --Tabs and Sections
 local MainTab = Window:NewTab("Main")
-local MainSection = 
-MainTab:NewSection("MainSection")
+local MainSection = MainTab:NewSection("MainSection")
+
+local Games = Window:NewTab("Games🎮")
+local GamesSection = Games:NewSection("Games")
+
+local Admins = Window:NewTab("Admins")
+local AdminsSection = Admins:NewSection("Admins")
+
+local Misc = Window:NewTab("Misc")
+local MiscSection = Misc:NewSection("Misc")
+
+local DiscordTab = Window:NewTab("Discord")
+local DiscordSection = DiscordTab:NewSection("Discord")
+
+local Credits = Window:NewTab("Credits")
+local CreditsSection = Credits:NewSection("Credits")
+
+ --Labels
+GamesSection:NewLabel("IceHub works with Brookhaven RP, Legends of speed,")
+GamesSection:NewLabel("Slap Battles, And MUCH MORE!")
+
+DiscordSection:NewLabel("Discord Server")
+DiscordSection:NewLabel("https://discord.gg/TvZcpKF3fc")
+DiscordSection:NewLabel("Deadly_Frenzy_ Discord is Deadly_Frenzy_")
  
-MainSection:NewLabel("Join Discord in Discord Tab")
+CreditsSection:NewLabel("Made by Deadly_Frenzy_")
+CreditsSection:NewLabel("Sub to Deadly_Frenzy_ on YouTube")
+CreditsSection:NewLabel("Follow deadly_frenzy_ on TikTok")
+CreditsSection:NewLabel("Deadly_Frenzy_ Roblox Account: F0X42512")
+CreditsSection:NewLabel("")
+CreditsSection:NewLabel("imgood_atnameing_things helped me")
+CreditsSection:NewLabel("Follow imgood_atnameing_things on TikTok")
+CreditsSection:NewLabel("imgood_atnameing_things Roblox Account: duckarmy609")
+
+ --Buttons
+MainSection:NewTextBox("Enter WalkSpeed", "Enter WalkSpeed", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (txt)
+end)
+
+MainSection:NewButton("Reset WalkSpeed", "Reset WalkSpeed", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+MainSection:NewTextBox("Enter JumpPower", "Enter JumpPower", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = (txt)
+end)
+
+MainSection:NewButton("Reset JumpPower", "Reset JumpPower", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
  
 MainSection:NewButton("OwlHub ESP", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))()
@@ -100,18 +154,9 @@ end)
 MainSection:NewButton("Airswim", nil, function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/airswim/main/main"))()
 end)
- 
- 
- 
- 
- 
- 
- 
-local Games = Window:NewTab("Games🎮")
-local GamesSection = Games:NewSection("Games")
- 
-GamesSection:NewLabel("IceHub works with Brookhaven RP, Legends of speed,")
-GamesSection:NewLabel("Slap Battles, And MUCH MORE!")
+
+
+
  
 GamesSection:NewButton("IceHub", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
@@ -193,11 +238,8 @@ end)
 GamesSection:NewButton("3008 (TRASH VERSION)", "only use for walk speed and jump power", function()
 loadstring(game:HttpGet'https://pastebin.com/raw/Z8rFSqA9')()
 end)
- 
- 
-local Admins = Window:NewTab("Admins")
-local AdminsSection = Admins:NewSection("Admins")
- 
+
+
 AdminsSection:NewButton("Infinite Yield", nil, function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
@@ -209,12 +251,6 @@ end)
 AdminsSection:NewButton("Fates Admin", nil, function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
 end)
- 
- 
- 
- 
-local Misc = Window:NewTab("Misc")
-local MiscSection = Misc:NewSection("Misc")
  
  
 MiscSection:NewButton("Keyboard", nil, function()
@@ -252,22 +288,6 @@ local p = game:GetService("Players").LocalPlayer
 ts:Teleport(game.PlaceId, p)
 end)
  
-local DiscordTab = Window:NewTab("Discord")
-local DiscordSection = DiscordTab:NewSection("Discord")
+
  
-DiscordSection:NewLabel("Discord Server")
-DiscordSection:NewLabel("https://discord.gg/TvZcpKF3fc")
-DiscordSection:NewLabel("Deadly_Frenzy_ Discord is Deadly_Frenzy_")
- 
-local Credits = Window:NewTab("Credits")
-local CreditsSection = Credits:NewSection("Credits")
- 
- 
-CreditsSection:NewLabel("Made by Deadly_Frenzy_")
-CreditsSection:NewLabel("Sub to Deadly_Frenzy_ on YouTube")
-CreditsSection:NewLabel("Follow deadly_frenzy_ on TikTok")
-CreditsSection:NewLabel("Deadly_Frenzy_ Roblox Account: F0X42512")
-CreditsSection:NewLabel("")
-CreditsSection:NewLabel("imgood_atnameing_things helped me")
-CreditsSection:NewLabel("Follow imgood_atnameing_things on TikTok")
-CreditsSection:NewLabel("imgood_atnameing_things Roblox Account: duckarmy609")
+
