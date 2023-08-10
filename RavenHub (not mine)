@@ -1,0 +1,1993 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Notification";
+    Text = "Raven Hub!"
+})
+
+wait(5)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Raven Hub", "Ocean")
+
+-- home
+local Home = Window:NewTab("Home")
+local HomeSection = Home:NewSection("Credits")
+HomeSection:NewLabel("Made By Tyrel Batutuy")
+HomeSection:NewLabel("Raven Hub")
+
+-- Player
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+PlayerSection:NewTextBox("Enter WalkSpeed", "Enter WalkSpeed", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (txt)
+end)
+
+PlayerSection:NewButton("Reset WalkSpeed", "Reset WalkSpeed", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+PlayerSection:NewTextBox("Enter JumpPower", "Enter JumpPower", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = (txt)
+end)
+
+PlayerSection:NewButton("Reset JumpPower", "Reset JumpPower", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+PlayerSection:NewTextBox("Teleport To Player", "Teleports To Player", function(tp)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[tp].Character.HumanoidRootPart.CFrame
+    local Victim = tp
+end)
+
+PlayerSection:NewLabel("Teleport Only Works If Full User And Not Using Fe")
+PlayerSection:NewLabel("Animation.")
+
+-- Scripts
+local Scripts = Window:NewTab("Scripts")
+local ScriptsSection = Scripts:NewSection("Scripts")
+ScriptsSection:NewButton("Teleport Tool", "Teleport Tool", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/GuBiX19e'))()
+end)
+
+ScriptsSection:NewButton("Netless", "Netless", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
+end)
+
+ScriptsSection:NewButton("Hitbox", "Hitbox", function()
+    _G.HeadSize = 20
+	_G.Disabled = true
+
+	game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.7
+						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+						v.Character.HumanoidRootPart.Material = "Neon"
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
+ScriptsSection:NewButton("Walk On Walls", "Walk On Walls", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/RY9cBbdG'),true))()
+end)
+
+ScriptsSection:NewButton("Replication Ui", "Replication Ui", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/rM0LU2mJ'),true))()
+end)
+
+ScriptsSection:NewButton("Keyboard Script", "Keyboard", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/manimcool21/Keyboard-FE/main/Protected%20(3).lua'),true))()
+end)
+
+ScriptsSection:NewButton("Vxpe Bedwars", "Vxpe Bedwars", function()
+    if game.PlaceId == 6872265039 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification",{
+            Title = "Notification";
+            Text = "Game Not Supported";
+                    })
+    end
+end)
+
+ScriptsSection:NewButton("Enclosed Script Dahood", "Dahood Script", function()
+    if game.PlaceId == 2788229376 then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Pvpahh/enclosed/main/enclosed'))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+ScriptsSection:NewButton("Chat Translator", "Chat Translator", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/WSBZiDNe'),true))()
+end)
+
+ScriptsSection:NewButton("Tall R15", "Tall R15", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/MXstG0Qd'))()
+end)
+
+ScriptsSection:NewButton("Build A Boat Copy Build", "Copy Build", function()
+    if game.PlaceId == 537413528 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/StenDirt/Trash-Game/main/Script.lua"))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+ScriptsSection:NewButton("Super Tools", "Super Tools", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
+end)
+
+ScriptsSection:NewButton("Btools", "Btools", function()
+    Instance.new("HopperBin", game.Players.LocalPlayer.Backpack).BinType = 4
+end)
+
+ScriptsSection:NewButton("Mouse Fling", "Mouse Fling", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/1ASvZmRL'))()
+end)
+
+ScriptsSection:NewButton("Hat Universe", "Hat Universe", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Hat/main/HatUniverse'))()
+end)
+
+-- guis
+local Guis = Window:NewTab("Guis")
+local GuisSection = Guis:NewSection("Guis")
+GuisSection:NewButton("Fly Gui", "Fly Gui", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Fly/main/Fly%20Gui'))()
+end)
+
+GuisSection:NewButton("Prison Life Gui", "Prison Life Gui", function()
+    if game.PlaceId == 155615604 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GuisSection:NewButton("Tower Of Hell Gui", "Toh Gui", function()
+    if game.PlaceId == 1962086868 then
+    loadstring(game:HttpGet('https://pastebin.com/raw/BbVHjH56'))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GuisSection:NewButton("Ninja Legends Gui", "NL Gui", function()
+    if game.PlaceId == 3956818381 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/44"))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GuisSection:NewButton("Shindo Life Gui", "Shindo Life Gui", function()
+    if game.PlaceId == 4616652839 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L1Z..."))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GuisSection:NewButton("Murder Mystery 2 Gui", "Mm2 Gui", function()
+    if game.PlaceId == 142823291 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GuisSection:NewButton("Chaos Gui", "Chaos Gui", function()
+    local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local TextButton_3 = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local TextButton_4 = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local TextLabel_3 = Instance.new("TextLabel")
+local UICorner_7 = Instance.new("UICorner")
+local UICorner_8 = Instance.new("UICorner")
+local TextButton_5 = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(34, 6, 32)
+Main.Position = UDim2.new(0.10494753, 0, 0.0906666666, 0)
+Main.Size = UDim2.new(0, 526, 0, 307)
+Main.Active = true
+Main.Draggable = true
+
+TextButton.Parent = Main
+TextButton.BackgroundColor3 = Color3.fromRGB(82, 89, 75)
+TextButton.BorderColor3 = Color3.fromRGB(55, 86, 108)
+TextButton.Position = UDim2.new(0.269961983, 0, 0.110749185, 0)
+TextButton.Size = UDim2.new(0, 371, 0, 29)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Free Gamepass (chaos)"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+TextButton.MouseButton1Down:Connect(function()
+game.Players.LocalPlayer.UserId = "2205774994"
+end)
+
+UICorner.Parent = TextButton
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextLabel.Size = UDim2.new(0, 526, 0, 24)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Chaos Script GUI"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 22.000
+
+UICorner_2.Parent = TextLabel
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextLabel_2.Size = UDim2.new(0, 134, 0, 307)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = ""
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
+
+UICorner_3.Parent = TextLabel_2
+
+TextButton_2.Parent = Main
+TextButton_2.BackgroundColor3 = Color3.fromRGB(34, 6, 32)
+TextButton_2.Position = UDim2.new(0.0209125467, 0, 0.110749185, 0)
+TextButton_2.Size = UDim2.new(0, 114, 0, 29)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "Main"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextSize = 25.000
+
+UICorner_4.Parent = TextButton_2
+
+TextButton_3.Parent = Main
+TextButton_3.BackgroundColor3 = Color3.fromRGB(82, 89, 75)
+TextButton_3.BorderColor3 = Color3.fromRGB(55, 86, 108)
+TextButton_3.Position = UDim2.new(0.269961983, 0, 0.231270358, 0)
+TextButton_3.Size = UDim2.new(0, 371, 0, 29)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = "Infinite Yield"
+TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_3.TextSize = 14.000
+TextButton_3.MouseButton1Down:Connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+UICorner_5.Parent = TextButton_3
+
+TextButton_4.Parent = Main
+TextButton_4.BackgroundColor3 = Color3.fromRGB(82, 89, 75)
+TextButton_4.BorderColor3 = Color3.fromRGB(55, 86, 108)
+TextButton_4.Position = UDim2.new(0.269961983, 0, 0.351791531, 0)
+TextButton_4.Size = UDim2.new(0, 371, 0, 29)
+TextButton_4.Font = Enum.Font.SourceSans
+TextButton_4.Text = "HitBox"
+TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_4.TextSize = 14.000
+TextButton_4.MouseButton1Down:Connect(function()
+	_G.HeadSize = 20
+	_G.Disabled = true
+
+	game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.7
+						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+						v.Character.HumanoidRootPart.Material = "Neon"
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
+UICorner_6.Parent = TextButton_4
+
+TextLabel_3.Parent = Main
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+TextLabel_3.Position = UDim2.new(-2.32830644e-10, 0, 0.879478812, 0)
+TextLabel_3.Size = UDim2.new(0, 134, 0, 37)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Arceus X#0001"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextSize = 14.000
+
+UICorner_7.Parent = TextLabel_3
+
+UICorner_8.Parent = Main
+
+TextButton_5.Parent = Main
+TextButton_5.BackgroundColor3 = Color3.fromRGB(82, 89, 75)
+TextButton_5.BorderColor3 = Color3.fromRGB(55, 86, 108)
+TextButton_5.Position = UDim2.new(0.269961983, 0, 0.475570023, 0)
+TextButton_5.Size = UDim2.new(0, 371, 0, 29)
+TextButton_5.Font = Enum.Font.SourceSans
+TextButton_5.Text = "Godmode (r6)"
+TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_5.TextSize = 14.000
+TextButton_5.MouseButton1Down:Connect(function()
+	local lp = game:GetService "Players".LocalPlayer
+	if lp.Character:FindFirstChild "Head" then
+		local char = lp.Character
+		char.Archivable = true
+		local new = char:Clone()
+		new.Parent = workspace
+		lp.Character = new
+		wait(2)
+		local oldhum = char:FindFirstChildWhichIsA "Humanoid"
+		local newhum = oldhum:Clone()
+		newhum.Parent = char
+		newhum.RequiresNeck = false
+		oldhum.Parent = nil
+		wait(2)
+		lp.Character = char
+		new:Destroy()
+		wait(1)
+		newhum:GetPropertyChangedSignal("Health"):Connect(
+		function()
+			if newhum.Health <= 0 then
+				oldhum.Parent = lp.Character
+				wait(1)
+				oldhum:Destroy()
+			end
+		end)
+		workspace.CurrentCamera.CameraSubject = char
+		if char:FindFirstChild "Animate" then
+			char.Animate.Disabled = true
+			wait(.1)
+			char.Animate.Disabled = false
+		end
+		lp.Character:FindFirstChild "Head":Destroy()
+	end
+end)
+
+UICorner_9.Parent = TextButton_5
+end)
+
+GuisSection:NewButton("Ghost Player Gui", "Ghost Player Gui", function()
+    -- Gui to Lua
+-- Version: 3.2
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "GhostPlayer Scripts";
+    Text = "made by ItzzJoshua_"; -- what the text says (ofc)
+    Duration = 60;
+    })
+    
+    -- Instances:
+    
+    local ScreenGui = Instance.new("ScreenGui")
+    local Main = Instance.new("Frame")
+    local TextLabel = Instance.new("TextLabel")
+    local TextButton = Instance.new("TextButton")
+    local TextButton_2 = Instance.new("TextButton")
+    local TextButton_3 = Instance.new("TextButton")
+    local TextButton_4 = Instance.new("TextButton")
+    local TextButton_5 = Instance.new("TextButton")
+    local TextButton_6 = Instance.new("TextButton")
+    local TextButton_7 = Instance.new("TextButton")
+    local TextButton_8 = Instance.new("TextButton")
+    local TextButton_9 = Instance.new("TextButton")
+    local TextButton_10 = Instance.new("TextButton")
+    local TextButton_11 = Instance.new("TextButton")
+    local TextButton_12 = Instance.new("TextButton")
+    local TextButton_13 = Instance.new("TextButton")
+    local TextButton_14 = Instance.new("TextButton")
+    local TextButton_15 = Instance.new("TextButton")
+    local TextButton_16 = Instance.new("TextButton")
+    local TextLabel_2 = Instance.new("TextLabel")
+    
+    --Properties:
+    
+    ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    Main.Name = "Main"
+    Main.Parent = ScreenGui
+    Main.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
+    Main.BorderColor3 = Color3.fromRGB(255, 255, 255)
+    Main.BorderSizePixel = 5
+    Main.Position = UDim2.new(0.21171169, 0, 0.181818172, 0)
+    Main.Size = UDim2.new(0, 383, 0, 237)
+    Main.Active = true
+    Main.Draggable = true
+    
+    TextLabel.Parent = Main
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BorderSizePixel = 4
+    TextLabel.Position = UDim2.new(-0.0652741492, 0, 0, 0)
+    TextLabel.Size = UDim2.new(0, 429, 0, 41)
+    TextLabel.Font = Enum.Font.PatrickHand
+    TextLabel.Text = "GhostPlayer Scripts GUI"
+    TextLabel.TextColor3 = Color3.fromRGB(225, 0, 3)
+    TextLabel.TextScaled = true
+    TextLabel.TextSize = 14.000
+    TextLabel.TextWrapped = true
+    
+    TextButton.Parent = Main
+    TextButton.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton.BorderSizePixel = 3
+    TextButton.Position = UDim2.new(0.0208877288, 0, 0.23206751, 0)
+    TextButton.Size = UDim2.new(0, 68, 0, 30)
+    TextButton.Font = Enum.Font.PatrickHand
+    TextButton.Text = "Player GUI"
+    TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton.TextScaled = true
+    TextButton.TextSize = 14.000
+    TextButton.TextWrapped = true
+    TextButton.MouseButton1Down:connect(function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\39\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\68\56\117\81\76\49\109\84\39\41\41\40\41\10")()
+    end)
+    TextButton_2.Parent = Main
+    TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_2.BorderSizePixel = 3
+    TextButton_2.Position = UDim2.new(0.263707578, 0, 0.23206751, 0)
+    TextButton_2.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_2.Font = Enum.Font.PatrickHand
+    TextButton_2.Text = "Auto Presser V2"
+    TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_2.TextScaled = true
+    TextButton_2.TextSize = 14.000
+    TextButton_2.TextWrapped = true
+    TextButton_2.MouseButton1Down:connect(function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\39\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\78\76\98\49\55\116\117\106\39\41\41\40\41\10")()
+    end)
+    TextButton_3.Parent = Main
+    TextButton_3.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_3.BorderSizePixel = 3
+    TextButton_3.Position = UDim2.new(0.498694509, 0, 0.23206751, 0)
+    TextButton_3.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_3.Font = Enum.Font.PatrickHand
+    TextButton_3.Text = "Kill GUI"
+    TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_3.TextScaled = true
+    TextButton_3.TextSize = 14.000
+    TextButton_3.TextWrapped = true
+    TextButton_3.MouseButton1Down:connect(function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\39\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\85\101\119\99\54\105\53\39\41\41\40\41\10")()
+    end)
+    TextButton_4.Parent = Main
+    TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_4.BorderSizePixel = 3
+    TextButton_4.Position = UDim2.new(0.736292422, 0, 0.23206751, 0)
+    TextButton_4.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_4.Font = Enum.Font.PatrickHand
+    TextButton_4.Text = "Time Stop GUI"
+    TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_4.TextScaled = true
+    TextButton_4.TextSize = 14.000
+    TextButton_4.TextWrapped = true
+    TextButton_4.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/djAd7g2W'))()
+    end)
+    TextButton_5.Parent = Main
+    TextButton_5.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_5.BorderSizePixel = 3
+    TextButton_5.Position = UDim2.new(0.736292422, 0, 0.434599161, 0)
+    TextButton_5.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_5.Font = Enum.Font.PatrickHand
+    TextButton_5.Text = "Teleport GUI"
+    TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_5.TextScaled = true
+    TextButton_5.TextSize = 14.000
+    TextButton_5.TextWrapped = true
+    TextButton_5.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/1dM3mAJq'))()
+    end)
+    TextButton_6.Parent = Main
+    TextButton_6.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_6.BorderSizePixel = 3
+    TextButton_6.Position = UDim2.new(0.498694509, 0, 0.434599161, 0)
+    TextButton_6.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_6.Font = Enum.Font.PatrickHand
+    TextButton_6.Text = "UpDown GUI"
+    TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_6.TextScaled = true
+    TextButton_6.TextSize = 14.000
+    TextButton_6.TextWrapped = true
+    TextButton_6.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/3GhN6aps'))()
+    end)
+    TextButton_7.Parent = Main
+    TextButton_7.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_7.BorderSizePixel = 3
+    TextButton_7.Position = UDim2.new(0.263707578, 0, 0.434599161, 0)
+    TextButton_7.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_7.Font = Enum.Font.PatrickHand
+    TextButton_7.Text = "Auto Chat"
+    TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_7.TextScaled = true
+    TextButton_7.TextSize = 14.000
+    TextButton_7.TextWrapped = true
+    TextButton_7.MouseButton1Down:connect(function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\39\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\48\120\113\74\98\72\98\52\39\41\41\40\41\10")()
+    end)
+    TextButton_8.Parent = Main
+    TextButton_8.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_8.BorderSizePixel = 3
+    TextButton_8.Position = UDim2.new(0.0208877325, 0, 0.434599161, 0)
+    TextButton_8.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_8.Font = Enum.Font.PatrickHand
+    TextButton_8.Text = "Position Reader"
+    TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_8.TextScaled = true
+    TextButton_8.TextSize = 14.000
+    TextButton_8.TextWrapped = true
+    TextButton_8.MouseButton1Down:connect(function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\39\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\87\121\72\66\67\86\104\119\39\41\41\40\41\10")()
+    end)
+    TextButton_9.Parent = Main
+    TextButton_9.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_9.BorderSizePixel = 3
+    TextButton_9.Position = UDim2.new(0.736292422, 0, 0.637130797, 0)
+    TextButton_9.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_9.Font = Enum.Font.PatrickHand
+    TextButton_9.Text = "Lag Script GUI"
+    TextButton_9.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_9.TextScaled = true
+    TextButton_9.TextSize = 14.000
+    TextButton_9.TextWrapped = true
+    TextButton_9.MouseButton1Down:connect(function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\39\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\119\117\112\51\113\55\101\113\39\41\41\40\41\10")()
+    end)
+    TextButton_10.Parent = Main
+    TextButton_10.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_10.BorderSizePixel = 3
+    TextButton_10.Position = UDim2.new(0.498694509, 0, 0.637130797, 0)
+    TextButton_10.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_10.Font = Enum.Font.PatrickHand
+    TextButton_10.Text = "Invisible GUI"
+    TextButton_10.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_10.TextScaled = true
+    TextButton_10.TextSize = 14.000
+    TextButton_10.TextWrapped = true
+    TextButton_10.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/AYtzGEPb'))()
+    end)
+    TextButton_11.Parent = Main
+    TextButton_11.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_11.BorderSizePixel = 3
+    TextButton_11.Position = UDim2.new(0.263707578, 0, 0.637130797, 0)
+    TextButton_11.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_11.Font = Enum.Font.PatrickHand
+    TextButton_11.Text = "Custom Hitbox"
+    TextButton_11.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_11.TextScaled = true
+    TextButton_11.TextSize = 14.000
+    TextButton_11.TextWrapped = true
+    TextButton_11.MouseButton1Down:connect(function()
+    loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\39\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\84\117\76\56\53\57\57\77\39\41\41\40\41\10")()
+    end)
+    TextButton_12.Parent = Main
+    TextButton_12.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_12.BorderSizePixel = 3
+    TextButton_12.Position = UDim2.new(0.0208877325, 0, 0.637130797, 0)
+    TextButton_12.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_12.Font = Enum.Font.PatrickHand
+    TextButton_12.Text = "Dupe Tools"
+    TextButton_12.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_12.TextScaled = true
+    TextButton_12.TextSize = 14.000
+    TextButton_12.TextWrapped = true
+    TextButton_12.MouseButton1Down:connect(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Dupe%20Tools%20Main%20Script.md'))()
+    end)
+    TextButton_13.Parent = Main
+    TextButton_13.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_13.BorderSizePixel = 3
+    TextButton_13.Position = UDim2.new(0.0208877325, 0, 0.83544302, 0)
+    TextButton_13.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_13.Font = Enum.Font.PatrickHand
+    TextButton_13.Text = "Fling GUI"
+    TextButton_13.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_13.TextScaled = true
+    TextButton_13.TextSize = 14.000
+    TextButton_13.TextWrapped = true
+    TextButton_13.MouseButton1Down:Connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/fj5VwQtC'))()
+    end)
+    TextButton_14.Parent = Main
+    TextButton_14.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_14.BorderSizePixel = 3
+    TextButton_14.Position = UDim2.new(0.263707578, 0, 0.83544302, 0)
+    TextButton_14.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_14.Font = Enum.Font.PatrickHand
+    TextButton_14.Text = "Auto jump GUI"
+    TextButton_14.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_14.TextScaled = true
+    TextButton_14.TextSize = 14.000
+    TextButton_14.TextWrapped = true
+    TextButton_14.MouseButton1Down:Connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/vViq08jX'))()
+    end)
+    TextButton_15.Parent = Main
+    TextButton_15.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_15.BorderSizePixel = 3
+    TextButton_15.Position = UDim2.new(0.498694539, 0, 0.83544302, 0)
+    TextButton_15.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_15.Font = Enum.Font.PatrickHand
+    TextButton_15.Text = "Freeze Cam GUI"
+    TextButton_15.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_15.TextScaled = true
+    TextButton_15.TextSize = 14.000
+    TextButton_15.TextWrapped = true
+    TextButton_15.MouseButton1Down:Connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/T0S0RPTW'))()
+    end)
+    TextButton_16.Parent = Main
+    TextButton_16.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+    TextButton_16.BorderSizePixel = 3
+    TextButton_16.Position = UDim2.new(0.736292481, 0, 0.83544302, 0)
+    TextButton_16.Size = UDim2.new(0, 68, 0, 30)
+    TextButton_16.Font = Enum.Font.PatrickHand
+    TextButton_16.Text = "Chat Hax GUI"
+    TextButton_16.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TextButton_16.TextScaled = true
+    TextButton_16.TextSize = 14.000
+    TextButton_16.TextWrapped = true
+    TextButton_16.MouseButton1Down:Connect(function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/MBpnp3yS'))()
+    end)
+    TextLabel_2.Parent = Main
+    TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel_2.BorderSizePixel = 4
+    TextLabel_2.Position = UDim2.new(-0.0652741492, 0, 0.995780587, 0)
+    TextLabel_2.Size = UDim2.new(0, 429, 0, 41)
+    TextLabel_2.Font = Enum.Font.PatrickHand
+    TextLabel_2.Text = "Made by ItzzJoshua_"
+    TextLabel_2.TextColor3 = Color3.fromRGB(225, 0, 3)
+    TextLabel_2.TextScaled = true
+    TextLabel_2.TextSize = 14.000
+    TextLabel_2.TextWrapped = true
+end)
+
+GuisSection:NewButton("BloxFruit Gui", "Bloxfruit Gui", function()
+    if game.PlaceId == 2753915549 then
+_G.Color = Color3.fromRGB(255,0,0)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Toonza555/BonkHub/main/Bonkxx.txt'))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GuisSection:NewButton("Yeet Fling Gui", "Yeet Fling Gui", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/saMtiek2",true))()
+end)
+
+GuisSection:NewButton("Ultimate Troll Gui", "Utg Gui", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukez/Scripts/main/UTG%20V3%20RAW"))()
+end)
+
+GuisSection:NewButton("Slap Battle Gui", "SB Gui", function()
+    if game.PlaceId == 6403373529 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/dizyhvh/slap_battles_gui/main/0.lua"))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GuisSection:NewButton("Teleport Gui", "Teleport Gui", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/1dM3mAJq'))()
+end)
+
+GuisSection:NewButton("Hydra Gui", "Hydra Gui", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/f5LHgpAF'))()
+end)
+
+GuisSection:NewButton("Energize Gui", "Energize Gui", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/f5LHgpAF'))()
+end)
+
+GuisSection:NewButton("Fencing Gui", "Fencing Gui", function()
+    if game.PlaceId == 12109643 then
+        -- Farewell Infortality.
+-- Version: 2.82
+-- Instances:
+local ScreenGui = Instance.new("ScreenGui")
+local OpenFrame = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+local Main = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local RealsimAnime = Instance.new("TextButton")
+local Brick = Instance.new("TextButton")
+local Reach = Instance.new("TextButton")
+local Invisible = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+--Properties:
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.CoreGui
+ 
+OpenFrame.Name = "OpenFrame"
+OpenFrame.Parent = ScreenGui
+OpenFrame.BackgroundColor3 = Color3.new(0.513726, 0.560784, 1)
+OpenFrame.Position = UDim2.new(0.936265111, 0, 0.837837815, 0)
+OpenFrame.Size = UDim2.new(0, 100, 0, 45)
+ 
+Open.Name = "Open"
+Open.Parent = OpenFrame
+Open.BackgroundColor3 = Color3.new(0, 0.0666667, 1)
+Open.Position = UDim2.new(-0.0299999714, 0, -0.111111112, 0)
+Open.Size = UDim2.new(0, 103, 0, 50)
+Open.Font = Enum.Font.Cartoon
+Open.Text = "X"
+Open.TextColor3 = Color3.new(0, 0, 0)
+Open.TextSize = 50
+Open.MouseButton1Down:connect(function()
+Main.Visible = true
+OpenFrame.Visible = false 
+end)
+ 
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.Active = true
+Main.BackgroundColor3 = Color3.new(0.364706, 0.352941, 0.352941)
+Main.Position = UDim2.new(0.23008287, 0, 0.226044238, 0)
+Main.Size = UDim2.new(0, 648, 0, 366)
+Main.Visible = false
+Main.Draggable = true
+ 
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel.Size = UDim2.new(0, 648, 0, 50)
+TextLabel.Font = Enum.Font.Cartoon
+TextLabel.Text = "FENCING FUCKER V1"
+TextLabel.TextColor3 = Color3.new(0.807843, 0.266667, 0.807843)
+TextLabel.TextSize = 30
+TextLabel.TextStrokeTransparency = 0
+ 
+RealsimAnime.Name = "Realsim Anime"
+RealsimAnime.Parent = Main
+RealsimAnime.BackgroundColor3 = Color3.new(0.137255, 0.509804, 1)
+RealsimAnime.Position = UDim2.new(0.356481493, 0, 0.172131151, 0)
+RealsimAnime.Size = UDim2.new(0, 200, 0, 50)
+RealsimAnime.Font = Enum.Font.Cartoon
+RealsimAnime.Text = "Realsim Anim"
+RealsimAnime.TextColor3 = Color3.new(0, 0, 0)
+RealsimAnime.TextSize = 30
+RealsimAnime.MouseButton1Down:connect(function()
+          --<//Realism Script by xAcrozed.\\>--
+            --/>>/>>/>>/>>/>>/>>/>>/>>/>>/--
+            --------------------------------
+ 
+            --//Variables\\--
+local lp      = game.Players.LocalPlayer
+local animate = lp.Character.Animate
+ 
+            --//Scripting\\--
+animate.walk.WalkAnim.AnimationId   = "rbxassetid://376760331"
+animate.idle.Animation1.AnimationId = "rbxassetid://75356212"
+animate.idle.Animation1.Looped      = true
+lp.character.Humanoid.WalkSpeed     = 25 
+end)
+ 
+Brick.Name = "Brick"
+Brick.Parent = Main
+Brick.BackgroundColor3 = Color3.new(0.137255, 0.509804, 1)
+Brick.Position = UDim2.new(0.0370370373, 0, 0.431694001, 0)
+Brick.Size = UDim2.new(0, 200, 0, 50)
+Brick.Font = Enum.Font.Cartoon
+Brick.Text = "Brick Spam "
+Brick.TextColor3 = Color3.new(0, 0, 0)
+Brick.TextSize = 30
+Brick.MouseButton1Down:connect(function()
+-- https://www.roblox.com/games/12109643/Fencing
+ 
+game:GetService('RunService').Stepped:connect(function()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "Spray" then
+if v.Handle.Mesh then
+v.Handle.Mesh:Destroy()
+end
+v.Parent = workspace
+end
+end
+end)
+local function paint()
+for i,v in pairs(game.Workspace:GetChildren())do
+if v.Name == "Handle" then
+v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+v.Transparency = 1
+v.CanCollide = false
+wait()
+v.CFrame = game.Players.LocalPlayer.Character["Left Leg"].CFrame
+end
+end
+end
+local function equip()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren())do
+if v.Name == "Spray" then
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+end
+end
+end
+while wait(0.05) do
+paint()
+equip()
+end
+end)
+ 
+Reach.Name = "Reach"
+Reach.Parent = Main
+Reach.BackgroundColor3 = Color3.new(0.137255, 0.509804, 1)
+Reach.Position = UDim2.new(0.345679015, 0, 0.677595675, 0)
+Reach.Size = UDim2.new(0, 200, 0, 50)
+Reach.Font = Enum.Font.Cartoon
+Reach.Text = "REACH"
+Reach.TextColor3 = Color3.new(0, 0, 0)
+Reach.TextSize = 40
+Reach.MouseButton1Down:connect(function()
+local foil=game.Players.LocalPlayer.Backpack.Foil
+a=Instance.new("SelectionBox",foil.Handle)
+a.Adornee=foil.Handle
+foil.Handle.Size=Vector3.new(0.2,0.2,120)
+foil.Equipped:connect(function()
+while wait() do
+game.Workspace[game.Players.LocalPlayer.Name].Foil.GripPos=Vector3.new(0,0,-60)
+end
+end)
+end)
+ 
+Invisible.Name = "Invisible"
+Invisible.Parent = Main
+Invisible.BackgroundColor3 = Color3.new(0.137255, 0.509804, 1)
+Invisible.Position = UDim2.new(0.654321015, 0, 0.431694001, 0)
+Invisible.Size = UDim2.new(0, 200, 0, 50)
+Invisible.Font = Enum.Font.Cartoon
+Invisible.Text = "Invisible"
+Invisible.TextColor3 = Color3.new(0, 0, 0)
+Invisible.TextSize = 30
+Invisible.MouseButton1Down:connect(function()
+Local = game:GetService('Players').LocalPlayer
+Char  = Local.Character
+touched,tpdback = false, false
+Local.CharacterAdded:connect(function(char)
+   if script.Disabled ~= true then
+       wait(.25)
+       loc = Char.HumanoidRootPart.Position
+       Char:MoveTo(box.Position + Vector3.new(0,.5,0))
+   end
+end)
+game:GetService('UserInputService').InputBegan:connect(function(key)
+   if key.KeyCode == Enum.KeyCode.Equals then
+       if script.Disabled ~= true then
+           script.Disabled = true
+           print'you may re-execute'
+       end
+   end
+end)
+box = Instance.new('Part',workspace)
+box.Anchored = true
+box.CanCollide = true
+box.Size = Vector3.new(10,1,10)
+box.Position = Vector3.new(0,10000,0)
+box.Touched:connect(function(part)
+   if (part.Parent.Name == Local.Name) then
+       if touched == false then
+           touched = true
+           function apply()
+               if script.Disabled ~= true then
+                   no = Char.HumanoidRootPart:Clone()
+                   wait(.25)
+                   Char.HumanoidRootPart:Destroy()
+                   no.Parent = Char
+                   Char:MoveTo(loc)
+                   touched = false
+               end end
+           if Char then
+               apply()
+           end
+       end
+   end
+end)
+repeat wait() until Char
+loc = Char.HumanoidRootPart.Position
+Char:MoveTo(box.Position + Vector3.new(0,.5,0))
+end)
+ 
+Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.new(0.137255, 0.509804, 1)
+Close.Position = UDim2.new(0.442901224, 0, 0.431694001, 0)
+Close.Size = UDim2.new(0, 73, 0, 50)
+Close.Font = Enum.Font.Cartoon
+Close.Text = "CLOSE"
+Close.TextColor3 = Color3.new(0, 0, 0)
+Close.TextSize = 20
+Close.MouseButton1Down:connect(function()
+OpenFrame.Visible = true
+Main.Visible = false 
+end)
+ 
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel_2.Position = UDim2.new(0, 0, 0.863388002, 0)
+TextLabel_2.Size = UDim2.new(0, 648, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "GUI BY LUDDE2K ON V3RM"
+TextLabel_2.TextColor3 = Color3.new(1, 0, 1)
+TextLabel_2.TextSize = 30
+-- Scripts:w
+else
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Notification";
+        Text = "Game Not Supported"
+    })
+    end
+end)
+
+GuisSection:NewButton("Legends Of Speed Gui", "LOS Gui", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Legends%20Of%20Speed/Script.lua"))()
+end)
+
+GuisSection:NewButton("Wolf X Gui", "Wolf X Gui", function()
+    
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local Speed = Instance.new("TextButton")
+local Default = Instance.new("TextButton")
+local Net = Instance.new("TextButton")
+local Inf = Instance.new("TextButton")
+local Vhub = Instance.new("TextButton")
+local Build = Instance.new("TextButton")
+local Blox = Instance.new("TextButton")
+local Shindo = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(118, 118, 118)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 3
+Frame.Position = UDim2.new(0.430324286, 0, 0.226771653, 0)
+Frame.Size = UDim2.new(0, 260, 0, 330)
+Frame.Active = true
+Frame.Draggable = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 3
+TextLabel.Size = UDim2.new(0, 260, 0, 32)
+TextLabel.Font = Enum.Font.Code
+TextLabel.Text = "Wolf X"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 38.000
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 3
+TextLabel_2.Position = UDim2.new(0, 0, 0.903030276, 0)
+TextLabel_2.Size = UDim2.new(0, 260, 0, 32)
+TextLabel_2.Font = Enum.Font.Oswald
+TextLabel_2.Text = "Made By Tyrelbro#9012"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 28.000
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(95, 95, 95)
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 3
+Close.Size = UDim2.new(0, 32, 0, 32)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 39.000
+
+Speed.Name = "Speed"
+Speed.Parent = Frame
+Speed.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Speed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Speed.BorderSizePixel = 2
+Speed.Position = UDim2.new(0.0230769236, 0, 0.160606056, 0)
+Speed.Size = UDim2.new(0, 100, 0, 37)
+Speed.Font = Enum.Font.SourceSans
+Speed.Text = "Speed"
+Speed.TextColor3 = Color3.fromRGB(0, 0, 0)
+Speed.TextSize = 14.000
+
+Default.Name = "Default"
+Default.Parent = Frame
+Default.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Default.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Default.BorderSizePixel = 2
+Default.Position = UDim2.new(0.592307746, 0, 0.160606056, 0)
+Default.Size = UDim2.new(0, 100, 0, 37)
+Default.Font = Enum.Font.SourceSans
+Default.Text = "Default Speed"
+Default.TextColor3 = Color3.fromRGB(0, 0, 0)
+Default.TextSize = 14.000
+
+Net.Name = "Net"
+Net.Parent = Frame
+Net.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Net.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Net.BorderSizePixel = 2
+Net.Position = UDim2.new(0.0230769236, 0, 0.339393914, 0)
+Net.Size = UDim2.new(0, 100, 0, 37)
+Net.Font = Enum.Font.SourceSans
+Net.Text = "Netless"
+Net.TextColor3 = Color3.fromRGB(0, 0, 0)
+Net.TextSize = 14.000
+Net.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/Cu7bKQWN'),true))()
+end)
+
+Inf.Name = "Inf"
+Inf.Parent = Frame
+Inf.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Inf.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Inf.BorderSizePixel = 2
+Inf.Position = UDim2.new(0.592307746, 0, 0.339393944, 0)
+Inf.Size = UDim2.new(0, 100, 0, 37)
+Inf.Font = Enum.Font.SourceSans
+Inf.Text = "Infinite Yield"
+Inf.TextColor3 = Color3.fromRGB(0, 0, 0)
+Inf.TextSize = 14.000
+Inf.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Vhub.Name = "Vhub"
+Vhub.Parent = Frame
+Vhub.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Vhub.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Vhub.BorderSizePixel = 2
+Vhub.Position = UDim2.new(0.0230769236, 0, 0.524242401, 0)
+Vhub.Size = UDim2.new(0, 100, 0, 37)
+Vhub.Font = Enum.Font.SourceSans
+Vhub.Text = "Vhub"
+Vhub.TextColor3 = Color3.fromRGB(0, 0, 0)
+Vhub.TextSize = 14.000
+Vhub.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/itsyaboivincentt5315/script/main/VHub.txt'),true))()
+end)
+
+Build.Name = "Build"
+Build.Parent = Frame
+Build.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Build.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Build.BorderSizePixel = 2
+Build.Position = UDim2.new(0.592307746, 0, 0.524242401, 0)
+Build.Size = UDim2.new(0, 100, 0, 37)
+Build.Font = Enum.Font.SourceSans
+Build.Text = "Build A Boat Copy"
+Build.TextColor3 = Color3.fromRGB(0, 0, 0)
+Build.TextSize = 14.000
+Build.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/StenDirt/Trash-Game/main/Script.lua"))()
+end)
+
+Blox.Name = "Blox"
+Blox.Parent = Frame
+Blox.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Blox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Blox.BorderSizePixel = 2
+Blox.Position = UDim2.new(0.0230769236, 0, 0.709090889, 0)
+Blox.Size = UDim2.new(0, 100, 0, 37)
+Blox.Font = Enum.Font.SourceSans
+Blox.Text = "Bloxfruits Gui"
+Blox.TextColor3 = Color3.fromRGB(0, 0, 0)
+Blox.TextSize = 14.000
+Blox.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/x2FIWz/SCRIPT/main/MOBILE/METAWARE.lua'))()
+end)
+
+Shindo.Name = "Shindo"
+Shindo.Parent = Frame
+Shindo.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Shindo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Shindo.BorderSizePixel = 2
+Shindo.Position = UDim2.new(0.592307746, 0, 0.709090889, 0)
+Shindo.Size = UDim2.new(0, 100, 0, 37)
+Shindo.Font = Enum.Font.SourceSans
+Shindo.Text = "Shindo Life"
+Shindo.TextColor3 = Color3.fromRGB(0, 0, 0)
+Shindo.TextSize = 14.000
+Shindo.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SxnwDev/Web/main/scripts/SnxwHub.txt"))()
+end)
+
+Open.Name = "Open"
+Open.Parent = ScreenGui
+Open.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
+Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Open.BorderSizePixel = 2
+Open.Position = UDim2.new(0, 0, 0.696062982, 0)
+Open.Size = UDim2.new(0, 104, 0, 24)
+Open.Font = Enum.Font.SourceSans
+Open.Text = "Open Gui"
+Open.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open.TextSize = 14.000
+
+-- Scripts:
+
+local function FQNQEP_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+	
+end
+coroutine.wrap(FQNQEP_fake_script)()
+local function LJRNZ_fake_script() -- Speed.LocalScript 
+	local script = Instance.new('LocalScript', Speed)
+
+	Plr = game.Players.LocalPlayer
+	
+	script.Parent.MouseButton1Click:connect(function()
+		Plr.Character.Humanoid.WalkSpeed = 150
+	end)
+	
+	
+end
+coroutine.wrap(LJRNZ_fake_script)()
+local function ZUZS_fake_script() -- Default.LocalScript 
+	local script = Instance.new('LocalScript', Default)
+
+	Plr = game.Players.LocalPlayer
+	
+	script.Parent.MouseButton1Click:connect(function()
+		Plr.Character.Humanoid.WalkSpeed = 16
+	end)
+	
+end
+coroutine.wrap(ZUZS_fake_script)()
+local function DUSVGLF_fake_script() -- Open.LocalScript 
+	local script = Instance.new('LocalScript', Open)
+
+	local Frame = script.Parent.Parent.Frame
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Frame.Visible = true
+	end)
+	
+	
+end
+coroutine.wrap(DUSVGLF_fake_script)()
+end)
+
+GuisSection:NewButton("1x1x1x1 Gui", "1x1x1x1 Gui", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/1x1/main/1x1x1x1'))()
+end)
+
+GuisSection:NewButton("Ninja Legends Gui", "Ninja Legends Gui", function()
+    if game.PlaceId == 3956818381 then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/pro/main/saber'))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+-- Hubs
+local Hubs = Window:NewTab("Hubs")
+local HubsSection = Hubs:NewSection("Hubs")
+HubsSection:NewButton("Fire X Hub", "Fire X Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/firex/main/firex'))()
+end)
+
+HubsSection:NewButton("Ez Hub", "Ez Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/Launcher.lua'))()
+end)
+
+HubsSection:NewButton("Sussy Hub", "Sussy Hub", function()
+    loadstring(game:HttpGet(('https://gist.githubusercontent.com/Nilrogram/8b0c8bd710be142f383c71f79279752c/raw/e4fb01a7de7cd498bb53270d2ad191dfab268a88/FE%2520SussyHub'),true))()
+end)
+
+HubsSection:NewButton("Hat Hub", "Hat Hub", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/SLPrghST'))()
+end)
+
+HubsSection:NewButton("Sushi X Hub", "Sushi X Hub", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/UMJQePCH'))()
+end)
+
+HubsSection:NewButton("Cryptonic Hub Ragdoll Engine", "Cryptonic Hub", function()
+    if game.PlaceId == 9848789324 then
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/martinelcrac/cryptonichub/main/Ragdollengine.lua'))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+HubsSection:NewButton("Ice Hub BrookHaven", "Ice Hub", function()
+    if game.PlaceId == 9848789324 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+HubsSection:NewButton("VHub", "Vhub", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/itsyaboivincentt5315/script/main/VHub.txt'),true))()
+end)
+
+HubsSection:NewButton("Lunar Moon Hub", "Lunar Moon Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Lunar/main/Lunar%20Moon'))()
+end)
+
+HubsSection:NewButton("Terminator Hub", "Terminator Hub", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/VExusWZ8'))()
+end)
+
+-- fe scripts
+local Fe = Window:NewTab("Fe Scripts")
+local FreeSection = Fe:NewSection("No Hats Version")
+FreeSection:NewButton("Fe Creeper", "Creeper", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/R7Hee4dW'))()
+end)
+
+FreeSection:NewButton("Fe Smug", "Smug", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/ZuKy7HFF'))()
+end)
+
+FreeSection:NewButton("Fe Winged Master", "Winged Master", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/ZuKy7HFF'))()
+end)
+
+FreeSection:NewButton("Fe Human Car", "Human Car", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/YbEir502'))()
+end)
+
+FreeSection:NewButton("Fe Floppa", "Floppa", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Floppa/main/Floppa'))()
+end)
+
+FreeSection:NewButton("Fe Parkour V2", "Parkour V2", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Parkour/main/Fe%20Parkour'))()
+end)
+
+FreeSection:NewButton("Fe Among Us", "Among Us", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Amogus/main/Among%20Us'))()
+end)
+
+FreeSection:NewButton("Fe Neko Maid", "Neko Maid", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Neko/main/NekoMaid'))()
+end)
+
+FreeSection:NewButton("Fe Sonic", "Sonic", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/sonic/main/SOnic'))()
+end)
+
+FreeSection:NewButton("Fe Cursed Spider", "Cursed Spider", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/tyreltrijo/Cursed/main/Spider'))()
+end)
+
+FreeSection:NewButton("Fe Creepy Crawler", "Creepy Crawler", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/eMmgNCQV'))()
+end)
+
+FreeSection:NewButton("Fe Spider", "Spider", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/txsk1LJg'))()
+end)
+
+FreeSection:NewButton("Fe Gale Fighter", "Gale Fighter", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/haBVC7bj'))()
+end)
+
+FreeSection:NewButton("Fe Mage", "Mage", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/bWpFGdU7'))()
+end)
+
+local HatsSection = Fe:NewSection("Hats Version")
+HatsSection:NewButton("Fe Pickaxe", "Pickaxe", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/VKf14y4E'))()
+end)
+
+HatsSection:NewButton("Copy Pickaxe Hat ID", "Copy", function()
+    setclipboard(tostring([[8136940617
+    451220849
+    48474294
+    48474313
+    376527115
+    6829585000
+    4381828509
+    63690008
+    62234425]]))
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Notification";
+        Text = "Copied!"
+    })
+end)
+
+HatsSection:NewButton("Fe Saitama", "Saitama", function()
+    print('Saitama Made by mugaga#2801')
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+game:GetService("RunService").Heartbeat:connect(function()
+v.Velocity = Vector3.new(0,35,0)
+wait(0.5)
+end)
+end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "Notification";
+	Text = "Netless activated";
+	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 16;
+local HatChar = game.Players.LocalPlayer.Character
+local Hat = HatChar:FindFirstChild("WDW_FoamFinger")
+
+Hat.Handle.SpecialMesh:Destroy()
+
+
+
+
+HumanDied = false
+local reanim
+function noplsmesh(hat)
+_G.OldCF=workspace.Camera.CFrame
+oldchar=game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character=workspace[game.Players.LocalPlayer.Name]
+for i,v in next, workspace[game.Players.LocalPlayer.Name][hat]:GetDescendants() do
+if v:IsA('Mesh') or v:IsA('SpecialMesh') then
+v:Remove()
+end
+end
+game.Players.LocalPlayer.Character=oldchar
+wait()
+workspace.Camera.CFrame=_G.OldCF
+game.Players.LocalPlayer.Character=oldchar
+end
+_G.ClickFling=false -- Set this to true if u want.
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/OofHead-FE/nexo-before-deleted/main/NexoPD'),true))()
+
+IT = Instance.new
+CF = CFrame.new
+VT = Vector3.new
+RAD = math.rad
+C3 = Color3.new
+UD2 = UDim2.new
+BRICKC = BrickColor.new
+ANGLES = CFrame.Angles
+EULER = CFrame.fromEulerAnglesXYZ
+COS = math.cos
+ACOS = math.acos
+SIN = math.sin
+ASIN = math.asin
+ABS = math.abs
+MRANDOM = math.random
+FLOOR = math.floor
+
+speed = 1
+sine = 1
+srv = game:GetService('RunService')
+
+function hatset(yes,part,c1,c0,nm)
+reanim[yes].Handle.AccessoryWeld.Part1=reanim[part]
+reanim[yes].Handle.AccessoryWeld.C1=c1 or CFrame.new()
+reanim[yes].Handle.AccessoryWeld.C0=c0 or CFrame.new()--3bbb322dad5929d0d4f25adcebf30aa5
+if nm==true then
+noplsmesh(yes)
+end
+end
+
+--put the hat script converted below
+
+reanim = game.Players.LocalPlayer.Character.CWExtra.NexoPD
+RJ = reanim.HumanoidRootPart.RootJoint
+RS = reanim.Torso['Right Shoulder']
+LS = reanim.Torso['Left Shoulder']
+RH = reanim.Torso['Right Hip']
+LH = reanim.Torso['Left Hip']
+Root = reanim.HumanoidRootPart
+NECK = reanim.Torso.Neck
+NECK.C0 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+NECK.C1 = CF(0,-0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C1 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C1 = CF(-0.5,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C1 = CF(0.5,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+
+Mode='1'
+
+mousechanger=game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
+if k == 'r' then-- first mode
+Mode='1'
+elseif k == 'e' then-- second mode
+Mode='2'
+elseif k == 'urkeybind' then-- third mode
+Mode='3'
+end
+end)
+
+
+
+attacklol=game.Players.LocalPlayer:GetMouse().Button1Down:Connect(function()
+Mode='Attack0'
+wait(1) -- Time Of Attack
+Mode='Attack1'
+end)
+
+
+
+coroutine.wrap(function()
+while true do -- anim changer
+if HumanDied then mousechanger:Disconnect() break end
+sine = sine + speed
+local rlegray = Ray.new(reanim["Right Leg"].Position + Vector3.new(0, 0.5, 0), Vector3.new(0, -2, 0))
+local rlegpart, rlegendPoint = workspace:FindPartOnRay(rlegray, char)
+local llegray = Ray.new(reanim["Left Leg"].Position + Vector3.new(0, 0.5, 0), Vector3.new(0, -2, 0))
+local llegpart, llegendPoint = workspace:FindPartOnRay(llegray, char)
+local rightvector = (Root.Velocity * Root.CFrame.rightVector).X + (Root.Velocity * Root.CFrame.rightVector).Z
+local lookvector = (Root.Velocity * Root.CFrame.lookVector).X + (Root.Velocity * Root.CFrame.lookVector).Z
+if lookvector > reanim.Humanoid.WalkSpeed then
+lookvector = reanim.Humanoid.WalkSpeed
+end
+if lookvector < -reanim.Humanoid.WalkSpeed then
+lookvector = -reanim.Humanoid.WalkSpeed
+end
+if rightvector > reanim.Humanoid.WalkSpeed then
+rightvector = reanim.Humanoid.WalkSpeed
+end
+if rightvector < -reanim.Humanoid.WalkSpeed then
+rightvector = -reanim.Humanoid.WalkSpeed
+end
+local lookvel = lookvector / reanim.Humanoid.WalkSpeed
+local rightvel = rightvector / reanim.Humanoid.WalkSpeed
+if Mode == '1' then
+if Root.Velocity.y > 1 then -- jump
+--jump clerp here
+elseif Root.Velocity.y < -1 then -- fall
+--fall clerp here
+elseif Root.Velocity.Magnitude < 2 then -- idle
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+10*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0.2*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+10.4*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(-33+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),0.5+0*math.cos(sine/13),-0.3+0*math.cos(sine/13))*ANGLES(RAD(0+3*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+elseif Root.Velocity.Magnitude < 20 then -- walk
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+10*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0.2*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+-10.4*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+-30*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+20*math.cos(sine/13)),RAD(3+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/13),0.5+0*math.cos(sine/13),-0.4+0*math.cos(sine/13))*ANGLES(RAD(34+15*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+elseif Root.Velocity.Magnitude > 20 then -- run
+--run clerp here
+end
+elseif Mode == '2' then
+if Root.Velocity.y > 1 then -- jump
+--jump clerp here
+elseif Root.Velocity.y < -1 then -- fall
+--fall clerp here
+elseif Root.Velocity.Magnitude < 2 then -- idle
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(21+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),-0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-37+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(0+3*math.cos(sine/1),1+-2*math.cos(sine/1),0+8*math.cos(sine/1))*ANGLES(RAD(130+10*math.cos(sine/1)),RAD(32+0*math.cos(sine/1)),RAD(-26+0*math.cos(sine/1))),.3)
+LS.C0 = LS.C0:Lerp(CF(0+5*math.cos(sine/1),0.5+4*math.cos(sine/1),0+-7*math.cos(sine/1))*ANGLES(RAD(94+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),0+-0.1*math.cos(sine/13),-1+0*math.cos(sine/13))*ANGLES(RAD(1+0*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(3+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.5+0*math.cos(sine/2),-0.6+0*math.cos(sine/2))*ANGLES(RAD(36+15*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+elseif Root.Velocity.Magnitude < 20 then -- walk
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(21+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),-0.5+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-37+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(0+3*math.cos(sine/1),1+-2*math.cos(sine/1),0+8*math.cos(sine/1))*ANGLES(RAD(130+10*math.cos(sine/1)),RAD(32+0*math.cos(sine/1)),RAD(-26+0*math.cos(sine/1))),.3)
+LS.C0 = LS.C0:Lerp(CF(0+5*math.cos(sine/1),0.5+4*math.cos(sine/1),0+-7*math.cos(sine/1))*ANGLES(RAD(94+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1)),RAD(0+0*math.cos(sine/1))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),0+-0.1*math.cos(sine/13),-1+0*math.cos(sine/13))*ANGLES(RAD(1+0*math.cos(sine/13)),RAD(-6+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(3+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.5+0*math.cos(sine/2),-0.6+0*math.cos(sine/2))*ANGLES(RAD(36+15*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+elseif Root.Velocity.Magnitude > 20 then -- run
+--run clerp here
+end
+elseif Mode == '3' then
+if Root.Velocity.y > 1 then -- jump
+--jump clerp here
+elseif Root.Velocity.y < -1 then -- fall
+--fall clerp here
+elseif Root.Velocity.Magnitude < 2 then -- idle
+--idle clerp here
+elseif Root.Velocity.Magnitude < 20 then -- walk
+--walk clerp here
+elseif Root.Velocity.Magnitude > 20 then -- run
+--run clerp here
+end
+elseif Mode == 'Attack0' then
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(5+0*math.cos(sine/13)),RAD(-37+0*math.cos(sine/13)),RAD(1+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-13+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0.5+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(105+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(101+0*math.cos(sine/13)),RAD(18+0*math.cos(sine/13)),RAD(-44+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(18+0*math.cos(sine/13)),RAD(-51+0*math.cos(sine/13)),RAD(12+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(3+0*math.cos(sine/13)),RAD(-2+0*math.cos(sine/13)),RAD(-4+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.6+0*math.cos(sine/2),-0.5+0*math.cos(sine/2))*ANGLES(RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+elseif Mode == 'Attack1' then
+NECK.C0 = NECK.C0:Lerp(CF(0+0*math.cos(sine/13),1+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RJ.C0 = RJ.C0:Lerp(CF(0+0*math.cos(sine/13),0+0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(-13+0*math.cos(sine/13)),RAD(-30+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+RS.C0 = RS.C0:Lerp(CF(1+0*math.cos(sine/13),0+0*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(101+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(14+0*math.cos(sine/13))),.3)
+LS.C0 = LS.C0:Lerp(CF(-1+0*math.cos(sine/13),0.5+0.1*math.cos(sine/13),-1+0*math.cos(sine/13))*ANGLES(RAD(105+0*math.cos(sine/13)),RAD(-15+0*math.cos(sine/13)),RAD(-15+0*math.cos(sine/13))),.3)
+RH.C0 = RH.C0:Lerp(CF(0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),0+0*math.cos(sine/13))*ANGLES(RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13)),RAD(0+0*math.cos(sine/13))),.3)
+LH.C0 = LH.C0:Lerp(CF(-0.5+0*math.cos(sine/13),-1+-0.1*math.cos(sine/13),-0.2+0*math.cos(sine/13))*ANGLES(RAD(21+0*math.cos(sine/13)),RAD(30+0*math.cos(sine/13)),RAD(-11+0*math.cos(sine/13))),.3)
+reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0 = reanim['WDW_FoamFinger'].Handle.AccessoryWeld.C0:Lerp(CF(0+0*math.cos(sine/2),0.6+0*math.cos(sine/2),-0.5+0*math.cos(sine/2))*ANGLES(RAD(21+2*math.cos(sine/2)),RAD(0+0*math.cos(sine/2)),RAD(0+0*math.cos(sine/2))),.3)
+end
+srv.RenderStepped:Wait()
+end
+end)()
+
+--This was copied from neptunian V
+local muter = false
+local ORGID = 335167645
+local ORVOL = 1.15
+local ORPIT = 1.01
+local kan = Instance.new("Sound",char)
+kan.Volume = 0
+if not NoSound then
+	kan.Volume = 1.15
+end
+kan.TimePosition = 0
+kan.PlaybackSpeed = 1.01
+kan.Pitch = 1.01
+kan.SoundId = "rbxassetid://335167645"
+kan.Name = "Saitama"
+kan.Looped = true
+kan:Play()
+--Created using Nexo Animator
+end)
+
+HatsSection:NewButton("Copy Saitama Hat ID", "Copy", function()
+    setclipboard(tostring('6470135113'))
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Notification";
+        Text = "Copied!"
+    })
+end)
+
+HatsSection:NewButton("Fe SCP-096", "Shy Guy", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/EM3gWpGZ'))()
+end)
+
+HatsSection:NewButton("Copy SCP-096 Hat ID", "Copy", function()
+    setclipboard(tostring([[3443038622
+    3409612660
+    4047554959
+    3940375351
+    62234425]]))
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Notification";
+        Text = "Copied!"
+    })
+end)
+
+HatsSection:NewButton("Fe Bike", "Bike", function()
+    --MADE BY GUAVAJUICEFANCLUBFAN (Delectiv#1857)
+--SUBSCRIBE TO DARK ECCENTRIC
+--HATS NEEDED--
+--https://www.roblox.com/catalog/9743558381/TJ-Wearable-BMX-Backpack
+--HAT IS VERY EASY TO GET, YOU GET IT UNDER 30SECONDS GAME LINK TO GET https://www.roblox.com/games/9129288160/Tommy-Play
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+clickfling = false -- set this to false if u dont want click fling or use torso flin
+function rmesh(a)
+if not (workspace[game.Players.LocalPlayer.Name][a].Handle:FindFirstChild('Mesh') or workspace[game.Players.LocalPlayer.Name][a].Handle:FindFirstChild('SpecialMesh')) then return end
+old=game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character=workspace[game.Players.LocalPlayer.Name]
+for i,v in next, workspace[game.Players.LocalPlayer.Name]:FindFirstChild(a).Handle:GetDescendants() do
+if v:IsA('Mesh') or v:IsA('SpecialMesh') then
+v:Remove()
+end
+end
+for i = 1 , 2 do
+game.Players.LocalPlayer.Character=old
+end
+end
+
+a=game.Players.LocalPlayer b=game.Players.LocalPlayer.Character c={}d=table.insert e=false for D,E in next,game:GetService("Players").LocalPlayer.Character:GetDescendants()do if E:IsA("BasePart")then d(c,game:GetService("RunService").Heartbeat:connect(function()pcall(function()E.Velocity=Vector3.new(-30,0,0)sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",999999999)game.Players.LocalPlayer.ReplicationFocus=workspace end)end))end end function f(D,E,F)game.StarterGui:SetCore("SendNotification",{Title=D;Text=E;Duration=F or 5;})end local x=game:GetService("RunService")g=Instance.new('Folder',b)g.Name='CWExtra'b.Archivable=true local y=b:Clone()y.Name='NexoPD'for D,E in next,y:GetDescendants()do if E:IsA('BasePart')or E:IsA('Decal')then E.Transparency=1 end end h=5.65 a.Character=nil a.Character=b b.Humanoid.AutoRotate=false b.Humanoid.WalkSpeed=0 b.Humanoid.JumpPower=0 b.Torso.Anchored=true f('Nexo','Reanimating...\nPlease wait '..h..' seconds.')wait(h)b.Torso.Anchored=false f('Nexo','Reanimated..')b.Humanoid.Health=0 y.Animate.Disabled=true y.Parent=g y.HumanoidRootPart.CFrame=b.HumanoidRootPart.CFrame*CFrame.new(0,5,0)function i(D,E,F,G)Instance.new("Attachment",D)Instance.new("AlignPosition",D)Instance.new("AlignOrientation",D)Instance.new("Attachment",E)D.Attachment.Name=D.Name E.Attachment.Name=D.Name D.AlignPosition.Attachment0=D[D.Name]D.AlignOrientation.Attachment0=D[D.Name]D.AlignPosition.Attachment1=E[D.Name]D.AlignOrientation.Attachment1=E[D.Name]E[D.Name].Position=F or Vector3.new()D[D.Name].Orientation=G or Vector3.new()D.AlignPosition.MaxForce=999999999 D.AlignPosition.MaxVelocity=math.huge D.AlignPosition.ReactionForceEnabled=false D.AlignPosition.Responsiveness=math.huge D.AlignOrientation.Responsiveness=math.huge D.AlignPosition.RigidityEnabled=false D.AlignOrientation.MaxTorque=999999999 D.Massless=true end function j(D,E,F)Instance.new("Attachment",D)Instance.new("AlignPosition",D)Instance.new("Attachment",E)D.Attachment.Name=D.Name E.Attachment.Name=D.Name D.AlignPosition.Attachment0=D[D.Name]D.AlignPosition.Attachment1=E[D.Name]E[D.Name].Position=F or Vector3.new()D.AlignPosition.MaxForce=999999999 D.AlignPosition.MaxVelocity=math.huge D.AlignPosition.ReactionForceEnabled=false D.AlignPosition.Responsiveness=math.huge D.Massless=true end for D,E in next,b:GetDescendants()do if E:IsA('BasePart')then d(c,x.RenderStepped:Connect(function()E.CanCollide=false end))end end for D,E in next,b:GetDescendants()do if E:IsA('BasePart')then d(c,x.Stepped:Connect(function()E.CanCollide=false end))end end for D,E in next,y:GetDescendants()do if E:IsA('BasePart')then d(c,x.RenderStepped:Connect(function()E.CanCollide=false end))end end for D,E in next,y:GetDescendants()do if E:IsA('BasePart')then d(c,x.Stepped:Connect(function()E.CanCollide=false end))end end for D,E in next,b:GetDescendants()do if E:IsA('Accessory')then i(E.Handle,y[E.Name].Handle)end end i(b['Head'],y['Head'])i(b['Torso'],y['Torso'])j(b['HumanoidRootPart'],y['Torso'],Vector3.new(0,0,0))i(b['Right Arm'],y['Right Arm'])i(b['Left Arm'],y['Left Arm'])i(b['Right Leg'],y['Right Leg'])i(b['Left Leg'],y['Left Leg'])k=a:GetMouse()local z=Instance.new("Part",g)z.CanCollide=false z.Transparency=1 d(c,x.RenderStepped:Connect(function()local D=workspace.CurrentCamera.CFrame.lookVector local E=y["HumanoidRootPart"]z.Position=E.Position z.CFrame=CFrame.new(z.Position,Vector3.new(D.X*10000,D.Y,D.Z*10000))end))l=false m=false n=false o=false p=false function q(D)r=Instance.new('BodyAngularVelocity',D)r.AngularVelocity=Vector3.new(9e9,9e9,9e9)r.MaxTorque=Vector3.new(9e9,9e9,9e9)end q(b.HumanoidRootPart)k=a:GetMouse()s=Instance.new('BodyPosition',b.HumanoidRootPart)s.P=9e9 s.D=9e9 s.MaxForce=Vector3.new(99999,99999,99999)local A d(c,x.Heartbeat:Connect(function()if A==true then s.Position=k.Hit.p b.HumanoidRootPart.Position=k.Hit.p else s.Position=y.Torso.Position b.HumanoidRootPart.Position=y.Torso.Position end end))local B=Instance.new("SelectionBox")B.Adornee=b.HumanoidRootPart B.LineThickness=0.02 B.Color3=Color3.fromRGB(250,0,0)B.Parent=b.HumanoidRootPart B.Name="RAINBOW"t=B if clickfling then d(c,k.Button1Down:Connect(function()A=true end))d(c,k.Button1Up:Connect(function()A=false end))end d(c,k.KeyDown:Connect(function(D)if D==' 'then p=true end if D=='w'then l=true end if D=='s'then m=true end if D=='a'then n=true end if D=='d'then o=true end end))d(c,k.KeyUp:Connect(function(D)if D==' 'then p=false end if D=='w'then l=false end if D=='s'then m=false end if D=='a'then n=false end if D=='d'then o=false end end))local function C(D,E,F)z.CFrame=z.CFrame*CFrame.new(-D,E,-F)y.Humanoid.WalkToPoint=z.Position end d(c,x.RenderStepped:Connect(function()if l==true then C(0,0,1e4)end if m==true then C(0,0,-1e4)end if n==true then C(1e4,0,0)end if o==true then C(-1e4,0,0)end if p==true then y.Humanoid.Jump=true end if l~=true and n~=true and m~=true and o~=true then y.Humanoid.WalkToPoint=y.HumanoidRootPart.Position end end))workspace.CurrentCamera.CameraSubject=y.Humanoid u=Instance.new('BindableEvent')d(c,u.Event:Connect(function()y:Destroy()e=true v=false for D,E in next,b:GetDescendants()do if E:IsA('BasePart')then E.Anchored=true end end w=b.Humanoid:Clone()b.Humanoid:Destroy()w.Parent=b game.Players:Chat('-re')for D,E in pairs(c)do E:Disconnect()end game:GetService("StarterGui"):SetCore("ResetButtonCallback",true)u:Remove()end))game:GetService("StarterGui"):SetCore("ResetButtonCallback",u)
+
+IT = Instance.new
+CF = CFrame.new
+VT = Vector3.new
+RAD = math.rad
+C3 = Color3.new
+UD2 = UDim2.new
+BRICKC = BrickColor.new
+ANGLES = CFrame.Angles
+EULER = CFrame.fromEulerAnglesXYZ
+COS = math.cos
+ACOS = math.acos
+SIN = math.sin
+ASIN = math.asin
+ABS = math.abs
+MRANDOM = math.random
+FLOOR = math.floor
+
+speed = 1
+sine = 1
+srv = game:GetService('RunService')
+
+reanim = workspace.Camera.CameraSubject.Parent
+
+function hat(h,p,c1,c0,m)
+reanim[h].Handle.AccessoryWeld.Part1=reanim[p]
+reanim[h].Handle.AccessoryWeld.C1=c1 or CFrame.new()
+reanim[h].Handle.AccessoryWeld.C0=reanim[h].Handle.AccessoryWeld.C0:Lerp(c0 or CFrame.new(),1)
+if m == true then
+rmesh(h)
+end
+end
+
+m=game.Players.LocalPlayer:GetMouse()
+RJ = reanim.HumanoidRootPart.RootJoint
+RS = reanim.Torso['Right Shoulder']
+LS = reanim.Torso['Left Shoulder']
+RH = reanim.Torso['Right Hip']
+LH = reanim.Torso['Left Hip']
+Root = reanim.HumanoidRootPart
+NECK = reanim.Torso.Neck
+NECK.C0 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+NECK.C1 = CF(0,-0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C1 = CF(0,-1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RJ.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C1 = CF(0,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C1 = CF(0,0.5,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C1 = CF(0,1,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LH.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+RS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+LS.C0 = CF(0,0,0)*ANGLES(RAD(0),RAD(0),RAD(0))
+
+Mode='1'
+
+mousechanger=game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
+if k == '1' then-- first mode
+Mode='1'
+elseif k == 'e' then-- second mode
+Mode='2'
+elseif k == 'q' then-- first mode again
+Mode='1'
+end
+end)
+
+attacklol=game.Players.LocalPlayer:GetMouse().Button1Down:Connect(function()
+Mode='Attack1'
+wait(0.5) -- time of attack u can edit this
+Mode='Attack2'
+wait(0.5)
+Mode='Attack3'
+wait(0.5)
+Mode ='2' -- change this mode to whatever u want the mode to be after attacking
+end)
+
+coroutine.wrap(function()
+while true do -- anim changer
+if HumanDied then break end
+sine = sine + speed
+local rlegray = Ray.new(reanim["Right Leg"].Position + Vector3.new(0, 0.5, 0), Vector3.new(0, -2, 0))
+local rlegpart, rlegendPoint = workspace:FindPartOnRay(rlegray, char)
+local llegray = Ray.new(reanim["Left Leg"].Position + Vector3.new(0, 0.5, 0), Vector3.new(0, -2, 0))
+local llegpart, llegendPoint = workspace:FindPartOnRay(llegray, char)
+local rightvector = (Root.Velocity * Root.CFrame.rightVector).X + (Root.Velocity * Root.CFrame.rightVector).Z
+local lookvector = (Root.Velocity * Root.CFrame.lookVector).X + (Root.Velocity * Root.CFrame.lookVector).Z
+if lookvector > reanim.Humanoid.WalkSpeed then
+lookvector = reanim.Humanoid.WalkSpeed
+end
+if lookvector < -reanim.Humanoid.WalkSpeed then
+lookvector = -reanim.Humanoid.WalkSpeed
+end
+if rightvector > reanim.Humanoid.WalkSpeed then
+rightvector = reanim.Humanoid.WalkSpeed
+end
+if rightvector < -reanim.Humanoid.WalkSpeed then
+rightvector = -reanim.Humanoid.WalkSpeed
+end
+local lookvel = lookvector / reanim.Humanoid.WalkSpeed
+local rightvel = rightvector / reanim.Humanoid.WalkSpeed
+if Mode == '1' then
+if Root.Velocity.y > 1 then -- jump
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),0.57+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-32.62+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-33.6+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(33.6+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),2+0*math["cos"](sine/10),-0.5+0*math["cos"](sine/10))*CFrame.Angles(math.rad(53.98+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+elseif Root.Velocity.y < -1 then -- fall
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),0.57+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-32.62+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-33.6+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(33.6+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),2+0*math["cos"](sine/10),-0.5+0*math["cos"](sine/10))*CFrame.Angles(math.rad(53.98+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+
+elseif Root.Velocity.Magnitude < 2 then -- idle
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),1.8+0*math["cos"](sine/10),-0.86+0*math["cos"](sine/10))*CFrame.Angles(math.rad(-8+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-2.06+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-7.15+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(110.02+0*math.cos(sine/10)),math.rad(23.42+0*math.cos(sine/10)),math.rad(-32.62+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(110.02+0*math.cos(sine/10)),math.rad(-23.42+0*math.cos(sine/10)),math.rad(32.62+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-1.4+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(13.23+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-1+0*math.cos(sine/10),-1.22+0*math.cos(sine/10))*CFrame.Angles(math.rad(-63.19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+
+elseif Root.Velocity.Magnitude > 20 then -- run
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),1.8+0*math["cos"](sine/10),-0.86+0*math["cos"](sine/10))*CFrame.Angles(math.rad(-8+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+-2.06*math["cos"](sine/10))),false)
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-2.06+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(110.02+0*math.cos(sine/10)),math.rad(23.42+0*math.cos(sine/10)),math.rad(-32.62+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(110.02+0*math.cos(sine/10)),math.rad(-23.42+0*math.cos(sine/10)),math.rad(32.62+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-1+0.6*math.cos(sine/10),0+0.5*math.cos(sine/10))*CFrame.Angles(math.rad(0+79.46*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-1+-0.6*math.cos(sine/10),0+-0.5*math.cos(sine/10))*CFrame.Angles(math.rad(0+-79.46*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+
+elseif Root.Velocity.Magnitude < 20 then -- walk
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),0.57+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-32.62+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-33.6+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(33.6+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),2+0*math["cos"](sine/10),-0.5+0*math["cos"](sine/10))*CFrame.Angles(math.rad(53.98+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+
+end
+
+elseif Mode == '2' then
+if Root.Velocity.y > 1 then -- jump
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),0.57+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-32.62+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-33.6+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(33.6+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),2+0*math["cos"](sine/10),-0.5+0*math["cos"](sine/10))*CFrame.Angles(math.rad(53.98+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+elseif Root.Velocity.y < -1 then -- fall
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),0.57+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-32.62+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-33.6+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(33.6+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),2+0*math["cos"](sine/10),-0.5+0*math["cos"](sine/10))*CFrame.Angles(math.rad(53.98+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+
+elseif Root.Velocity.Magnitude < 2 then -- idle
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),0.25+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-65+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-33.6+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(33.6+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),0+0*math.cos(sine/10),-1.22+0*math.cos(sine/10))*CFrame.Angles(math.rad(38.7+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-1.58+0*math.cos(sine/10))*CFrame.Angles(math.rad(-12.25+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),2+0*math["cos"](sine/10),-0.5+0*math["cos"](sine/10))*CFrame.Angles(math.rad(53.98+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+
+elseif Root.Velocity.Magnitude > 20 then -- run
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(28.51+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(110.02+0*math.cos(sine/10)),math.rad(23.42+0*math.cos(sine/10)),math.rad(-32.62+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(110.02+0*math.cos(sine/10)),math.rad(-23.42+0*math.cos(sine/10)),math.rad(32.62+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-1+0.6*math.cos(sine/10),0+0.5*math.cos(sine/10))*CFrame.Angles(math.rad(0+79.46*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-1+-0.6*math.cos(sine/10),0+-0.5*math.cos(sine/10))*CFrame.Angles(math.rad(0+-79.46*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),1.8+0*math["cos"](sine/10),-0.86+0*math["cos"](sine/10))*CFrame.Angles(math.rad(0+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+-2.06*math["cos"](sine/10))),false)
+
+elseif Root.Velocity.Magnitude < 20 then -- walk
+NECK.C0=NECK.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),1+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RJ.C0=RJ.C0:Lerp(CFrame.new(0+0*math.cos(sine/10),0.57+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(-32.62+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+RS.C0=RS.C0:Lerp(CFrame.new(1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(-33.6+0*math.cos(sine/10))),.2) 
+LS.C0=LS.C0:Lerp(CFrame.new(-1.5+0*math.cos(sine/10),-0.14+0*math.cos(sine/10),0+0*math.cos(sine/10))*CFrame.Angles(math.rad(125.31+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(33.6+0*math.cos(sine/10))),.2) 
+RH.C0=RH.C0:Lerp(CFrame.new(0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2) 
+LH.C0=LH.C0:Lerp(CFrame.new(-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10),-0.5+0*math.cos(sine/10))*CFrame.Angles(math.rad(19+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10)),math.rad(0+0*math.cos(sine/10))),.2)
+hat('Back Bike','Torso',CFrame.new(0,0,0),CFrame.new(0+0*math["cos"](sine/10),2+0*math["cos"](sine/10),-0.5+0*math["cos"](sine/10))*CFrame.Angles(math.rad(53.98+0*math["cos"](sine/10)),math.rad(180+0*math["cos"](sine/10)),math.rad(0+0*math["cos"](sine/10))),false)
+
+end
+
+elseif Mode == 'Attack1' then --attack clerp 
+--none
+elseif Mode == 'Attack2' then --attack clerp 
+--none
+elseif Mode == 'Attack3' then --attack clerp 
+--none
+end
+srv.RenderStepped:Wait()
+end
+end)()
+end)
+
+HatsSection:NewButton("Copy Bike Hat ID", "Copy", function()
+    setclipboard(tostring('9743558381'))
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Notification";
+        Text = "Copied!"
+    })
+end)
+
+HatsSection:NewButton("Fe Waiter", "Waiter", function()
+    --[[ Made By Ice & Fire0001
+
+
+????ℎ???? ????????????????????????
+
+
+]]-- Made By 09Ice_Fire09
+
+
+-- Equip https://www.roblox.com/catalog/8862923874/Dessert-Plate-Hat To Continue:
+
+
+
+
+
+
+
+
+--[[
+
+Controls:
+e = Offer The Meal. + Click = Show The Meal. (not fling)
+q = Eat The Meal
+Click = Punch (fling)
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/The Waiter'),true))()
+end)
+
+HatsSection:NewButton("Copy Waiter Hat ID", "Copy", function()
+    setclipboard(tostring('8862923874'))
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Notification";
+        Text = "Copied!"
+    })
+end)
+
+local Admin = Window:NewTab("Admins")
+local PCSection = Admin:NewSection("Admins For Pc")
+PCSection:NewButton("Fates Admin", "Fates Admin", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+end)
+
+PCSection:NewButton("Cmd X", "Cmd X", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+end)
+
+local MPSection = Admin:NewSection("Admins For Pc And Mobile")
+MPSection:NewButton("Infinite Yield", "Inf Yield", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+MPSection:NewButton("Revis Admin", "Revis Admin", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/RqaZUrBZ'))()
+end)
+
+MPSection:NewButton("Septex Admin Prison Life", "Septex Admin", function()
+    if game.PlaceId == 155615604 then
+        loadstring(game:HttpGet('https://shlex.dev/release/domainx/latest.lua',true))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+MPSection:NewButton("Prison Ruiner Prison Life", "Prison Ruiner", function()
+    if game.PlaceId == 155615604 then
+        loadstring(game:HttpGet('https://pastebin.com/raw/1RvgFtcx',true))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Notification";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+MPSection:NewButton("Gx Admin", "Gx Admin", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/v6E9BmFK'))()
+end)
