@@ -208,7 +208,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/bardium/gods-will/mai
 end)
  
 GamesSection:NewButton("3008", "Wait a little bit before executing", function()
-loadstring(game:HttpGet'https://raw.githubusercontent.com/RunDTM/scripts/main/3008.lua')()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/RunDTM/scripts/main/3008.lua'))()
 end)
  
 GamesSection:NewButton("dingus", "", function()
