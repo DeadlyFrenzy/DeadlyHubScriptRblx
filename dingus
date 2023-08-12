@@ -109,6 +109,10 @@ local general = Window:NewTab("General")
 local hidersection = general:NewSection("Hider")
 local shootersection = general:NewSection("Hunter")
 
+local DeadlyTab = Window:NewTab("DeadlyHub")
+local DeadlySection = DeadlyTab:NewSection("DeadlyHub")
+
+
 --Buttons and Toggles
 shootersection:NewButton("Kill all", "Kill all", function()
     killplayer("all")
@@ -130,12 +134,15 @@ shootersection:NewToggle("no blindness", "no blindness", function(v)
     end
 end)
 
-hidersection:NewButton("Auto tasks", "Auto tasks", function()
-     doTasks()
-end)
 
 hidersection:NewButton("do all tasks", "do all tasks", function()
         for i=1,20 do
             print(game:GetService("ReplicatedStorage").Remotes.InvokeTaskCompleted:InvokeServer(i))
         end
+end)
+
+--Deadly Buttons
+
+DeadlySection:NewButton("DeadlyHub", nil, function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/DeadlyHub'))()
 end)
