@@ -325,8 +325,9 @@ DiscordSection:NewLabel("Deadly_Frenzy_ Discord is Deadly_Frenzy_")
  
 local Credits = Window:NewTab("Credits")
 local CreditsSection = Credits:NewSection("Credits")
- 
- 
+
+
+
 CreditsSection:NewLabel("Made by Deadly_Frenzy_")
 CreditsSection:NewLabel("Sub to Deadly_Frenzy_ on YouTube")
 CreditsSection:NewLabel("Follow deadly_frenzy_ on TikTok")
@@ -335,3 +336,10 @@ CreditsSection:NewLabel("")
 CreditsSection:NewLabel("imgood_atnameing_things helped me")
 CreditsSection:NewLabel("Follow imgood_atnameing_things on TikTok")
 CreditsSection:NewLabel("imgood_atnameing_things Roblox Account: duckarmy609")
+
+local KeybindTab = Window:NewTab("Keybinds")
+local KeybindSection = KeybingTab:NewSection("Keybinds")
+
+KeybindSection:NewKeybind("Toggle", "Toggle", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
