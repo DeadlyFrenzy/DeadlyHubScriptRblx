@@ -212,7 +212,7 @@ loadstring(game:HttpGet'https://raw.githubusercontent.com/RunDTM/scripts/main/30
 end)
  
 GamesSection:NewButton("Dingus", "", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/scripts/main/dingus.lua",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/scripts/main/dingus.lua%22,true))()
 end)
 
 GamesSection:NewButton("Clicker Madness", "", function()
