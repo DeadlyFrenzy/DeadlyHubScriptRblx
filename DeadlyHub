@@ -212,10 +212,13 @@ loadstring(game:HttpGet'https://raw.githubusercontent.com/RunDTM/scripts/main/30
 end)
  
 GamesSection:NewButton("Dingus", "", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/scripts/main/dingus.lua%22,true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/scripts/main/dingus.lua",true))()
 end)
- 
- 
+
+GamesSection:NewButton("Clicker Madness", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/Clicking%20Madness"))()
+end)
+
 local Admins = Window:NewTab("Admins")
 local AdminsSection = Admins:NewSection("Admins")
  
