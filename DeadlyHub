@@ -214,7 +214,7 @@ end)
 
 
 GamesSection:NewButton("Clicker Madness", "", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/Clicking%20Madness"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/Clicker%20Madness"))()
 end)
 
 local Admins = Window:NewTab("Admins")
