@@ -19,22 +19,23 @@ FarmingSection:NewToggle("AutoTap", "AutoTap", function(state)
     end
 end)
 
+
+local selectedRebirth
+FarmingSection:NewDropdown("Rebirth Amount", "Rebirth Amount", {"1", "10", "100", "1000", "10000"}, function(rebirthValue)
+    selectedRebirth = rebirthValue
+end)
+
 FarmingSection:NewToggle("AutoRebirth", "AutoRebirth", function(state)
     if state then
-            getgenv().autoRebirth = true
-            doAutoRebirth(selectedAmount)
+         getgenv().autoRebirth = true
+         autoRebirth(selectedRebirth)
     else
         getgenv().autoRebirth = false
-        doAutoRebirth()
     end
 end)
 
 
-local selectedAmount
-FarmingSection:NewDropdown("Rebirth Amount", "Rebirth Amount", {"1", "10", "100", "1000", "10000"}, function(rebirthValue)
-    selectedAmount = rebirthValue
-    print(rebirthValue, "selected")
-end)
+
 
 
 FarmingSection:NewToggle("AutoBuyEgg", "AutoBuyEgg", function(state)
@@ -43,7 +44,6 @@ FarmingSection:NewToggle("AutoBuyEgg", "AutoBuyEgg", function(state)
         doBuyEgg('basic')
     else
         getgenv().buyEgg = false
-        doBuyEgg()
     end
 end)
 
@@ -64,10 +64,10 @@ end
 
 
 
-function doAutoRebirth(rebirthAmount)
+function autoRebirth(selectedRebirth)
     spawn(function()
         while autoRebirth == true do
-            local args = {[1] = rebirthAmount}
+            local args = {[1] = selectedRebirth}
             game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.RebirthService.BuyRebirths:FireServer(unpack(args))
              wait()
         end
@@ -78,8 +78,7 @@ end
 
 function doBuyEgg(eggType)
     spawn(function()
-        while wait() do
-            if not buyEgg then break end
+        while buyEgg  == true do
             remotePath.EggService.Purchase:FireServer(eggType)
         end
     end)
