@@ -1,0 +1,90 @@
+local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = kavoUi.CreateLib("DeadlyHub Tapping Madness","Ocean")
+
+
+
+--Tabs and Sections
+local FarmingTab = Window:NewTab("Farming")
+local FarmingSection = FarmingTab:NewSection("Farming")
+
+
+--Buttons
+FarmingSection:NewToggle("AutoTap", "AutoTap", function(state)
+    if state then
+        getgenv().autoTap = true
+        doTap()
+    else
+        getgenv().autoTap = false
+        doTap()
+    end
+end)
+
+FarmingSection:NewToggle("AutoRebirth", "AutoRebirth", function(state)
+    if state then
+            getgenv().autoRebirth = true
+            doAutoRebirth(selectedAmount)
+    else
+        getgenv().autoRebirth = false
+        doAutoRebirth()
+    end
+end)
+
+
+local selectedAmount
+FarmingSection:NewDropdown("Rebirth Amount", "Rebirth Amount", {"1", "10", "100", "1000", "10000"}, function(rebirthValue)
+    selectedAmount = rebirthValue
+    print(rebirthValue, "selected")
+end)
+
+
+FarmingSection:NewToggle("AutoBuyEgg", "AutoBuyEgg", function(state)
+    if state then
+        getgenv().buyEgg = true
+        doBuyEgg('basic')
+    else
+        getgenv().buyEgg = false
+        doBuyEgg()
+    end
+end)
+
+
+
+
+
+function doTap()
+    spawn(function()
+        while autoTap == true do
+            local args = {[1] = 1}
+            game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.ClickService.Click:FireServer(unpack(args))
+            wait()
+        end
+    end)
+end
+
+
+
+
+function doAutoRebirth(rebirthAmount)
+    spawn(function()
+        while autoRebirth == true do
+            local args = {[1] = rebirthAmount}
+            game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.RebirthService.BuyRebirths:FireServer(unpack(args))
+             wait()
+        end
+    end)
+end
+
+
+
+function doBuyEgg(eggType)
+    spawn(function()
+        while wait() do
+            if not buyEgg then break end
+            remotePath.EggService.Purchase:FireServer(eggType)
+        end
+    end)
+end
+
+
+
+
