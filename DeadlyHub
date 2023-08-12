@@ -211,8 +211,8 @@ GamesSection:NewButton("3008", "Wait a little bit before executing", function()
 loadstring(game:HttpGet'https://raw.githubusercontent.com/RunDTM/scripts/main/3008.lua')()
 end)
  
-GamesSection:NewButton("3008 (TRASH VERSION)", "only use for walk speed and jump power", function()
-loadstring(game:HttpGet'https://pastebin.com/raw/Z8rFSqA9')()
+GamesSection:NewButton("Dingus", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/scripts/main/dingus.lua%22,true))()
 end)
  
  
