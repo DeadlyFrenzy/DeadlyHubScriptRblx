@@ -323,7 +323,7 @@ DiscordSection:NewLabel("Discord Server")
 DiscordSection:NewLabel("https://discord.gg/TvZcpKF3fc")
 DiscordSection:NewLabel("Deadly_Frenzy_ Discord is Deadly_Frenzy_")
 DiscordSection:NewButton("Copy Discord Link", "Copies The Discord Link", function(v)
-    setclipboard("dsc.gg/sacr")
+    setclipboard("https://discord.gg/TvZcpKF3fc")
 end)
  
 local Credits = Window:NewTab("Credits")
