@@ -137,7 +137,9 @@ end)
 
 hidersection:NewButton("do all tasks", "do all tasks", function()
         for i=1,20 do
-            print(game:GetService("ReplicatedStorage").Remotes.InvokeTaskCompleted:InvokeServer(i))
+            local args = {[1] = i}
+	
+	game:GetService("ReplicatedStorage").Remotes.InvokeTaskCompleted:InvokeServer(unpack(args))
         end
 end)
 
