@@ -1,14 +1,41 @@
+game:GetService("CoreGui")
+game.StarterGui:SetCore("SendNotification", {
+Title = "DeadlyHub";
+Text = "Loading"; 
+Duration = 5;
+})
+
+wait(1.8)
 local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = kavoUi.CreateLib("DeadlyHub","Synapse")
- 
- 
- 
+wait(0.01)
+local Window = kavoUi.CreateLib("DeadlyHub (new)","Serpent")
+
+--Tabs and Sections
+
 local MainTab = Window:NewTab("Main")
-local MainSection = 
-MainTab:NewSection("MainSection")
- 
-MainSection:NewLabel("Join Discord in Discord Tab")
- 
+local MainSection = MainTab:NewSection("Main")
+wait(0.2)
+local Player = Window:NewTab("Player")
+local PlayerSection = Player:NewSection("Player")
+wait(0.2)
+local Games = Window:NewTab("🎮Games🎮")
+local GamesSection = Games:NewSection("🎮Games🎮")
+wait(0.2)
+local Admins = Window:NewTab("Admins")
+local AdminsSection = Admins:NewSection("Admins")
+wait(0.2)
+local Misc = Window:NewTab("Misc")
+local MiscSection = Misc:NewSection("Misc")
+wait(0.2)
+local DiscordTab = Window:NewTab("Discord")
+local DiscordSection = DiscordTab:NewSection("Discord")
+wait(0.2)
+
+wait(0.9)
+
+
+--Main Buttons
+
 MainSection:NewButton("OwlHub ESP", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))()
 end)
@@ -68,7 +95,7 @@ Players.PlayerRemoving:Connect(function(plr)
     end
 end)
 end)
- 
+
 MainSection:NewButton("Noclip", nil, function()
     loadstring(game:HttpGet("https://pastebin.com/raw/B5xRxTnk",true))()
 end)
@@ -100,9 +127,9 @@ end)
 MainSection:NewButton("Airswim", nil, function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/airswim/main/main"))()
 end)
- 
- local Player = Window:NewTab("Player")
-local PlayerSection = Player:NewSection("Player")
+
+
+--Player Buttons
 PlayerSection:NewTextBox("Enter WalkSpeed", "Enter WalkSpeed", function(txt)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (txt)
 end)
@@ -124,12 +151,7 @@ local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
 p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
 end)
 
-
-
-
- 
-local Games = Window:NewTab("Games🎮")
-local GamesSection = Games:NewSection("Games")
+--Games Buttons
  
 GamesSection:NewLabel("IceHub works with Brookhaven RP, Legends of speed,")
 GamesSection:NewLabel("Slap Battles, And MUCH MORE!")
@@ -219,8 +241,6 @@ GamesSection:NewButton("dingus (kavo ui)", "", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/dingus'))()
 end)
 
-
-
 GamesSection:NewButton("Clicker Madness", "", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/Clicker%20Madness"))()
 end)
@@ -233,10 +253,8 @@ GamesSection:NewButton("Work at pizza place (Auto Farm)", "", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/cEwtwKZR",true))()
 end)
 
+--Admin Buttons
 
-local Admins = Window:NewTab("Admins")
-local AdminsSection = Admins:NewSection("Admins")
- 
 AdminsSection:NewButton("Infinite Yield", nil, function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
@@ -248,12 +266,8 @@ end)
 AdminsSection:NewButton("Fates Admin", nil, function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
 end)
- 
- 
- 
- 
-local Misc = Window:NewTab("Misc")
-local MiscSection = Misc:NewSection("Misc")
+
+--Misc Buttons
 
 MiscSection:NewButton("Rejoin", nil, function()
     local ts = game:GetService("TeleportService")
@@ -313,36 +327,13 @@ end)
 MiscSection:NewButton("Ghost Hub", nil, function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
 end)
- 
 
- 
-local DiscordTab = Window:NewTab("Discord")
-local DiscordSection = DiscordTab:NewSection("Discord")
- 
-DiscordSection:NewLabel("Discord Server")
-DiscordSection:NewLabel("https://discord.gg/TvZcpKF3fc")
+--Discord Buttons
+
+DiscordSection:NewLabel("Discord Server: https://discord.gg/TvZcpKF3fc")
+DiscordSection:NewLabel("")
 DiscordSection:NewLabel("Deadly_Frenzy_ Discord is Deadly_Frenzy_")
-DiscordSection:NewButton("Copy Discord Link", "Copies The Discord Link", function(v)
-    setclipboard("https://discord.gg/TvZcpKF3fc")
-end)
- 
-local Credits = Window:NewTab("Credits")
-local CreditsSection = Credits:NewSection("Credits")
-
-
-
-CreditsSection:NewLabel("Made by Deadly_Frenzy_")
-CreditsSection:NewLabel("Sub to Deadly_Frenzy_ on YouTube")
-CreditsSection:NewLabel("Follow deadly_frenzy_ on TikTok")
-CreditsSection:NewLabel("Deadly_Frenzy_ Roblox Account: F0X42512")
-CreditsSection:NewLabel("")
-CreditsSection:NewLabel("imgood_atnameing_things helped me")
-CreditsSection:NewLabel("Follow imgood_atnameing_things on TikTok")
-CreditsSection:NewLabel("imgood_atnameing_things Roblox Account: duckarmy609")
-
-local KeybindTab = Window:NewTab("Keybinds")
-local KeybindSection = KeybingTab:NewSection("Keybinds")
-
-KeybindSection:NewKeybind("Toggle", "Toggle", Enum.KeyCode.F, function()
-	Library:ToggleUI()
-end)
+DiscordSection:NewLabel("")
+DiscordSection:NewLabel("Or go to")
+DiscordSection:NewLabel("@deadlyhub0 on TikTok")
+DiscordSection:NewLabel("then bio has discord link")
