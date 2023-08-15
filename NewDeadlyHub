@@ -18,6 +18,15 @@ local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
 local Games = Window:NewTab("🎮Games🎮")
 local GamesSection = Games:NewSection("🎮Games🎮")
+local Admins = Window:NewTab("Admins")
+local AdminsSection = Admins:NewSection("Admins")
+local Misc = Window:NewTab("Misc")
+local MiscSection = Misc:NewSection("Misc")
+local DiscordTab = Window:NewTab("Discord")
+local DiscordSection = DiscordTab:NewSection("Discord")
+
+
+wait(1.8)
 
 
 --Main Buttons
@@ -239,7 +248,80 @@ GamesSection:NewButton("Work at pizza place (Auto Farm)", "", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/cEwtwKZR",true))()
 end)
 
+--Admin Buttons
 
+AdminsSection:NewButton("Infinite Yield", nil, function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+ 
+AdminsSection:NewButton("CMD-X", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+ 
+AdminsSection:NewButton("Fates Admin", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+end)
+
+--Misc Buttons
+
+MiscSection:NewButton("Rejoin", nil, function()
+    local ts = game:GetService("TeleportService")
+ 
+local p = game:GetService("Players").LocalPlayer
+ 
+ 
+ 
+ts:Teleport(game.PlaceId, p)
+end)
+
+MiscSection:NewButton("Super Tools", "Super Tools", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
+end)
+
+MiscSection:NewButton("Btools", "Btools", function()
+    Instance.new("HopperBin", game.Players.LocalPlayer.Backpack).BinType = 4
+end)
+
+MiscSection:NewButton("Walk On Walls", "Walk On Walls", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/RY9cBbdG'),true))()
+end)
+
+MiscSection:NewButton("Replication Ui", "Replication Ui", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/rM0LU2mJ'),true))()
+end)
+
+MiscSection:NewButton("Chat Translator", "Chat Translator", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/WSBZiDNe'),true))()
+end)
+
+MiscSection:NewButton("Tall R15", "Tall R15", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/MXstG0Qd'))()
+end)
+
+MiscSection:NewButton("Keyboard", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+ 
+MiscSection:NewButton("RTX GUI", nil, function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/Bkf0BJb3'))()
+end)
+ 
+MiscSection:NewButton("Spy Gui", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MichaelScripter/MiniScript/main/Spy%20gui.lua"))()
+end)
+ 
+MiscSection:NewButton("Simple Spy", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+end)
+
+
+MiscSection:NewButton("All GamePasses Free", nil, function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/53yY1S39'))()
+end)
+
+MiscSection:NewButton("Ghost Hub", nil, function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+end)
 
 
 
