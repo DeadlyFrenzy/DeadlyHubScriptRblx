@@ -330,10 +330,10 @@ end)
 
 --Discord Buttons
 
-DiscordSection:NewLabel("Discord Server")
-DiscordSection:NewLabel("https://discord.gg/TvZcpKF3fc")
+DiscordSection:NewLabel("Discord Server: https://discord.gg/TvZcpKF3fc")
+DiscordSection:NewLabel("")
 DiscordSection:NewLabel("Deadly_Frenzy_ Discord is Deadly_Frenzy_")
-DiscordSection:NewLabel("Deadly_Frenzy_ Discord is Deadly_Frenzy_")
+DiscordSection:NewLabel("")
 DiscordSection:NewLabel("Or go to")
 DiscordSection:NewLabel("@deadlyhub0 on TikTok")
 DiscordSection:NewLabel("then bio has discord link")
