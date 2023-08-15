@@ -227,3 +227,25 @@ GamesSection:NewButton("dingus (kavo ui)", "", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/dingus'))()
 end)
 
+GamesSection:NewButton("Clicker Madness", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/Clicker%20Madness"))()
+end)
+
+GamesSection:NewButton("Work at pizza place (troll)", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/incognitototo/sda/main/dwa.lua", true))()
+end)
+
+GamesSection:NewButton("Work at pizza place (Auto Farm)", "", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/cEwtwKZR",true))()
+end)
+
+
+
+
+
+
+
+
+
+
+
