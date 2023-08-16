@@ -4,9 +4,8 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 })
 
 wait(5)
-local Libary = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-wait(0.01)
-local Window = kavoUi.CreateLib("DeadlyHub (new)","Serpent")
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Raven Hub", "Ocean")
 
 -- home
 local Home = Window:NewTab("Home")
