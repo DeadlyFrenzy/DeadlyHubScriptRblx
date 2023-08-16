@@ -1,0 +1,4 @@
+local clipboard = game:GetService("ClipboardService")
+if clipboard then
+    clipboard:Set("Hello, Roblox clipboard!")
+end
