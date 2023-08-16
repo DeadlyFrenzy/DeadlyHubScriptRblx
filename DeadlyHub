@@ -15,6 +15,9 @@ local Window = kavoUi.CreateLib("DeadlyHub (new)","Serpent")
 local MainTab = Window:NewTab("Main")
 local MainSection = MainTab:NewSection("Main")
 wait(0.2)
+local Main2 = Window:NewTab("Main2")
+local Main2Section = Misc:NewSection("Main2")
+wait(0.2)
 local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
 wait(0.2)
@@ -23,9 +26,6 @@ local GamesSection = Games:NewSection("🎮Games🎮")
 wait(0.2)
 local Admins = Window:NewTab("Admins")
 local AdminsSection = Admins:NewSection("Admins")
-wait(0.2)
-local Misc = Window:NewTab("Misc")
-local MiscSection = Misc:NewSection("Misc")
 wait(0.2)
 local DiscordTab = Window:NewTab("Discord")
 local DiscordSection = DiscordTab:NewSection("Discord")
@@ -125,6 +125,104 @@ MainSection:NewButton("Airswim", nil, function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HeyGyt/airswim/main/main"))()
 end)
 
+MainSection:NewButton("Rejoin", nil, function()
+    local ts = game:GetService("TeleportService")
+ 
+local p = game:GetService("Players").LocalPlayer
+ 
+ 
+ 
+ts:Teleport(game.PlaceId, p)
+end)
+
+
+--Main2 Buttons
+
+ScriptsSection:NewButton("Teleport Tool", "Teleport Tool", function()
+	mouse = game.Players.LocalPlayer:GetMouse()
+	tool = Instance.new("Tool")
+	tool.RequiresHandle = false
+	tool.Name = "DeadlyHub Click TP"
+	tool.Activated:connect(function()
+	local pos = mouse.Hit+Vector3.new(0,2.5,0)
+	pos = CFrame.new(pos.X,pos.Y,pos.Z)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+	end)
+	tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+
+Main2Section:NewButton("Hitbox", "Hitbox", function()
+    _G.HeadSize = 20
+	_G.Disabled = true
+
+	game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.7
+						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+						v.Character.HumanoidRootPart.Material = "Neon"
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
+Main2Section:NewButton("Super Tools", "Super Tools", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
+end)
+
+Main2Section:NewButton("Btools", "Btools", function()
+    Instance.new("HopperBin", game.Players.LocalPlayer.Backpack).BinType = 4
+end)
+
+Main2Section:NewButton("Walk On Walls", "Walk On Walls", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/RY9cBbdG'),true))()
+end)
+
+Main2Section:NewButton("Replication Ui", "Replication Ui", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/rM0LU2mJ'),true))()
+end)
+
+Main2Section:NewButton("Chat Translator", "Chat Translator", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/WSBZiDNe'),true))()
+end)
+
+
+Main2Section:NewButton("Keyboard", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+ 
+Main2Section:NewButton("RTX GUI", nil, function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/Bkf0BJb3'))()
+end)
+ 
+Main2Section:NewButton("Spy Gui", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MichaelScripter/MiniScript/main/Spy%20gui.lua"))()
+end)
+ 
+Main2Section:NewButton("Simple Spy", nil, function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+end)
+
+
+Main2Section:NewButton("All GamePasses Free", nil, function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/53yY1S39'))()
+end)
+
+Main2Section:NewButton("All GamePasses Free V2", nil, function()
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2",true))()
+end)
+
+
+Main2Section:NewButton("Ghost Hub", nil, function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+end)
 
 --Player Buttons
 PlayerSection:NewTextBox("Enter WalkSpeed", "Enter WalkSpeed", function(txt)
@@ -166,9 +264,75 @@ GamesSection:NewButton("🔪MM2🔪", "", function()
 end)
  
 GamesSection:NewButton("Bedwars🛌", "", function()
-    	loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()	
+	 if game.PlaceId == 6872265039 then
+	        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+	    else
+	        game:GetService("StarterGui"):SetCore("SendNotification",{
+	            Title = "DeadlyHub";
+	            Text = "Game Not Supported";
+	                    })
+	    end
+	end)
 end)
- 
+
+GamesSection:NewButton("Prison Life Gui", "Prison Life Gui", function()
+    if game.PlaceId == 155615604 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "DeadlyHub";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GamesSection:NewButton("Tower Of Hell Gui", "Toh Gui", function()
+    if game.PlaceId == 1962086868 then
+    loadstring(game:HttpGet('https://pastebin.com/raw/BbVHjH56'))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "DeadlyHub";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GamesSection:NewButton("Ninja Legends Gui", "NL Gui", function()
+    if game.PlaceId == 3956818381 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/44"))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "DeadlyHub";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GamesSection:NewButton("Shindo Life Gui", "Shindo Life Gui", function()
+    if game.PlaceId == 4616652839 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/L1Z..."))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "DeadlyHub";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+GamesSection:NewButton("Murder Mystery 2 Gui", "Mm2 Gui", function()
+    if game.PlaceId == 142823291 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()
+    else
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "DeadlyHub";
+            Text = "Game Not Supported"
+        })
+    end
+end)
+
+
+
+
 GamesSection:NewButton("Prison Life", "", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/iZ64yzjE'))()
 end)
@@ -266,71 +430,7 @@ end)
 
 --Misc Buttons
 
-MiscSection:NewButton("Rejoin", nil, function()
-    local ts = game:GetService("TeleportService")
- 
-local p = game:GetService("Players").LocalPlayer
- 
- 
- 
-ts:Teleport(game.PlaceId, p)
-end)
 
-MiscSection:NewButton("Super Tools", "Super Tools", function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/sQWeMuB0'))()
-end)
-
-MiscSection:NewButton("Btools", "Btools", function()
-    Instance.new("HopperBin", game.Players.LocalPlayer.Backpack).BinType = 4
-end)
-
-MiscSection:NewButton("Walk On Walls", "Walk On Walls", function()
-    loadstring(game:HttpGet(('https://pastebin.com/raw/RY9cBbdG'),true))()
-end)
-
-MiscSection:NewButton("Replication Ui", "Replication Ui", function()
-    loadstring(game:HttpGet(('https://pastebin.com/raw/rM0LU2mJ'),true))()
-end)
-
-MiscSection:NewButton("Chat Translator", "Chat Translator", function()
-    loadstring(game:HttpGet(('https://pastebin.com/raw/WSBZiDNe'),true))()
-end)
-
-MiscSection:NewButton("Tall R15", "Tall R15", function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/MXstG0Qd'))()
-end)
-
-MiscSection:NewButton("Keyboard", nil, function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-end)
- 
-MiscSection:NewButton("RTX GUI", nil, function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/Bkf0BJb3'))()
-end)
- 
-MiscSection:NewButton("Spy Gui", nil, function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MichaelScripter/MiniScript/main/Spy%20gui.lua"))()
-end)
- 
-MiscSection:NewButton("Simple Spy", nil, function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
-end)
-
-
-MiscSection:NewButton("All GamePasses Free", nil, function()
-    loadstring(game:HttpGet('https://pastebin.com/raw/53yY1S39'))()
-end)
-
-MiscSection:NewButton("All GamePasses Free V2", nil, function()
-    loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2",true))()
-end)
-
-
-
-
-MiscSection:NewButton("Ghost Hub", nil, function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
-end)
 
 --Discord Buttons
 
