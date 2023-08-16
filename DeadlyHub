@@ -273,10 +273,10 @@ end)
 
 GamesSection:NewButton("Tower Of Hell Gui", "Toh Gui", function()
        loadstring(game:HttpGet('https://pastebin.com/raw/BbVHjH56'))()
+end)
 
 GamesSection:NewButton("Ninja Legends Gui", "NL Gui", function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/44"))()
-    end
 end)
 
 GamesSection:NewButton("Shindo Life Gui", "Shindo Life Gui", function()
