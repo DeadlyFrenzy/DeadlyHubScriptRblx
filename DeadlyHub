@@ -264,74 +264,24 @@ GamesSection:NewButton("🔪MM2🔪", "", function()
 end)
  
 GamesSection:NewButton("Bedwars🛌", "", function()
-	 if game.PlaceId == 6872265039 then
 	        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-	    else
-	        game:GetService("StarterGui"):SetCore("SendNotification",{
-	            Title = "DeadlyHub";
-	            Text = "Game Not Supported";
-	                    })
-	    end
-	end)
 end)
 
 GamesSection:NewButton("Prison Life Gui", "Prison Life Gui", function()
-    if game.PlaceId == 155615604 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Denverrz/scripts/master/PRISONWARE_v1.3.txt"))()
-    else
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "DeadlyHub";
-            Text = "Game Not Supported"
-        })
-    end
 end)
 
 GamesSection:NewButton("Tower Of Hell Gui", "Toh Gui", function()
-    if game.PlaceId == 1962086868 then
-    loadstring(game:HttpGet('https://pastebin.com/raw/BbVHjH56'))()
-    else
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "DeadlyHub";
-            Text = "Game Not Supported"
-        })
-    end
-end)
+       loadstring(game:HttpGet('https://pastebin.com/raw/BbVHjH56'))()
 
 GamesSection:NewButton("Ninja Legends Gui", "NL Gui", function()
-    if game.PlaceId == 3956818381 then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/44"))()
-    else
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "DeadlyHub";
-            Text = "Game Not Supported"
-        })
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/44"))()
     end
 end)
 
 GamesSection:NewButton("Shindo Life Gui", "Shindo Life Gui", function()
-    if game.PlaceId == 4616652839 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/L1Z..."))()
-    else
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "DeadlyHub";
-            Text = "Game Not Supported"
-        })
-    end
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/L1Z..."))()
 end)
-
-GamesSection:NewButton("Murder Mystery 2 Gui", "Mm2 Gui", function()
-    if game.PlaceId == 142823291 then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()
-    else
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "DeadlyHub";
-            Text = "Game Not Supported"
-        })
-    end
-end)
-
-
-
 
 GamesSection:NewButton("Prison Life", "", function()
     loadstring(game:HttpGet('https://pastebin.com/raw/iZ64yzjE'))()
