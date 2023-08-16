@@ -138,7 +138,7 @@ end)
 
 --Main2 Buttons
 
-ScriptsSection:NewButton("Teleport Tool", "Teleport Tool", function()
+Main2Section:NewButton("Teleport Tool", "Teleport Tool", function()
 	mouse = game.Players.LocalPlayer:GetMouse()
 	tool = Instance.new("Tool")
 	tool.RequiresHandle = false
