@@ -324,6 +324,13 @@ MiscSection:NewButton("All GamePasses Free", nil, function()
     loadstring(game:HttpGet('https://pastebin.com/raw/53yY1S39'))()
 end)
 
+MiscSection:NewButton("All GamePasses Free V2", nil, function()
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2",true))()
+end)
+
+
+
+
 MiscSection:NewButton("Ghost Hub", nil, function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
 end)
