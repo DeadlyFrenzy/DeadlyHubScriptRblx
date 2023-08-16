@@ -31,9 +31,6 @@ local DiscordTab = Window:NewTab("Discord")
 local DiscordSection = DiscordTab:NewSection("Discord")
 wait(0.2)
 
-wait(0.9)
-
-
 --Main Buttons
 
 MainSection:NewButton("OwlHub ESP", "", function()
