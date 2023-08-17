@@ -1,0 +1,102 @@
+-- v1 
+        -- Get the Players service
+        local Players = game:GetService("Players")
+        
+        -- Function to update the player list
+        local function updatePlayerList()
+            -- Clear the existing player list
+            for _, v in pairs(script.Parent:GetChildren()) do
+                if v:IsA("TextLabel") then
+                    v:Destroy()
+                end
+            end
+        
+            -- Get the list of players
+            local playerList = Players:GetPlayers()
+        
+            -- Display the player list
+            local yOffset = 0
+            for i, player in ipairs(playerList) do
+                local nameLabel = Instance.new("TextLabel")
+                nameLabel.Name = "PlayerLabel"
+                nameLabel.Text = player.Name
+                nameLabel.Position = UDim2.new(0, 10, 0, yOffset)
+                nameLabel.Size = UDim2.new(0, 200, 0, 20)
+                nameLabel.Parent = script.Parent
+        
+                yOffset = yOffset + 25
+            end
+        end
+        
+        -- Call the function initially and whenever a player joins or leaves
+        updatePlayerList()
+        Players.PlayerAdded:Connect(updatePlayerList)
+        Players.PlayerRemoving:Connect(updatePlayerList)
+
+
+--v2
+        -- Get the Players service
+        local Players = game:GetService("Players")
+        
+        -- Function to teleport to a player
+        local function teleportToPlayer(player)
+            -- Check if the player is valid and is not the local player
+            if player and player ~= Players.LocalPlayer then
+                local localPlayer = Players.LocalPlayer
+                local localPlayerCharacter = localPlayer.Character
+                local targetPlayerCharacter = player.Character
+        
+                -- Check if both characters are valid
+                if localPlayerCharacter and targetPlayerCharacter then
+                    localPlayerCharacter:SetPrimaryPartCFrame(targetPlayerCharacter:FindFirstChild("HumanoidRootPart").CFrame)
+                end
+            end
+        end
+        
+        -- Function to update the player list
+        local function updatePlayerList()
+            -- Clear the existing player list
+            for _, v in pairs(script.Parent:GetChildren()) do
+                if v:IsA("Frame") then
+                    v:Destroy()
+                end
+            end
+        
+            -- Get the list of players
+            local playerList = Players:GetPlayers()
+        
+            -- Display the player list
+            local yOffset = 0
+            for i, player in ipairs(playerList) do
+                local playerFrame = Instance.new("Frame")
+                playerFrame.Name = "PlayerFrame"
+                playerFrame.Position = UDim2.new(0, 10, 0, yOffset)
+                playerFrame.Size = UDim2.new(0, 200, 0, 45)
+                playerFrame.Parent = script.Parent
+        
+                local nameLabel = Instance.new("TextLabel")
+                nameLabel.Name = "PlayerLabel"
+                nameLabel.Text = player.Name
+                nameLabel.Position = UDim2.new(0, 0, 0, 0)
+                nameLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                nameLabel.Parent = playerFrame
+        
+                local teleportButton = Instance.new("TextButton")
+                teleportButton.Name = "TeleportButton"
+                teleportButton.Text = "Teleport"
+                teleportButton.Position = UDim2.new(0, 0, 0.5, 0)
+                teleportButton.Size = UDim2.new(1, 0, 0.5, 0)
+                teleportButton.Parent = playerFrame
+        
+                teleportButton.MouseButton1Click:Connect(function()
+                    teleportToPlayer(player)
+                end)
+        
+                yOffset = yOffset + 50
+            end
+        end
+        
+        -- Call the function initially and whenever a player joins or leaves
+        updatePlayerList()
+        Players.PlayerAdded:Connect(updatePlayerList)
+        Players.PlayerRemoving:Connect(updatePlayerList)
