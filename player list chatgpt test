@@ -16,93 +16,78 @@ mainFrame.BorderColor3 = Color3.new(1, 0, 0)
 mainFrame.BorderSizePixel = 2
 mainFrame.Parent = playerListGui
 
+-- Draggable variables
+local isDragging = false
+local offset = Vector2.new(0, 0)
+
 -- Create the title label
 local titleLabel = Instance.new("TextLabel")
-titleLabel.Name = "TitleLabel"
-titleLabel.Text = "Player List"
-titleLabel.Position = UDim2.new(0, 0, 0, 10)
-titleLabel.Size = UDim2.new(1, 0, 0, 30)
-titleLabel.BackgroundColor3 = Color3.new(0, 0, 0)
-titleLabel.TextColor3 = Color3.new(1, 0, 0)
-titleLabel.Font = Enum.Font.SourceSansBold
-titleLabel.FontSize = Enum.FontSize.Size24
-titleLabel.Parent = mainFrame
+-- ... (same as before)
 
 -- Create the scrolling frame for the player list
 local playerScrollFrame = Instance.new("ScrollingFrame")
-playerScrollFrame.Name = "PlayerScrollFrame"
-playerScrollFrame.Position = UDim2.new(0, 10, 0, 50)
-playerScrollFrame.Size = UDim2.new(1, -20, 1, -60)
-playerScrollFrame.BackgroundTransparency = 1
-playerScrollFrame.Parent = mainFrame
+-- ... (same as before)
 
 -- Function to teleport to a player
-local function teleportToPlayer(player)
-    -- Check if the player is valid and is not the local player
-    if player and player ~= Players.LocalPlayer then
-        local localPlayer = Players.LocalPlayer
-        local localPlayerCharacter = localPlayer.Character
-        local targetPlayerCharacter = player.Character
-        
-        -- Check if both characters are valid
-        if localPlayerCharacter and targetPlayerCharacter then
-            localPlayerCharacter:SetPrimaryPartCFrame(targetPlayerCharacter:FindFirstChild("HumanoidRootPart").CFrame)
-        end
-    end
-end
+-- ... (same as before)
 
 -- Function to update the player list
-local function updatePlayerList()
-    -- Clear the existing player list
-    for _, v in pairs(playerScrollFrame:GetChildren()) do
-        if v:IsA("Frame") then
-            v:Destroy()
-        end
-    end
+-- ... (same as before)
 
-    -- Get the list of players
-    local playerList = Players:GetPlayers()
-
-    -- Display the player list
-    local yOffset = 10
-    for i, player in ipairs(playerList) do
-        local playerFrame = Instance.new("Frame")
-        playerFrame.Name = "PlayerFrame"
-        playerFrame.Position = UDim2.new(0, 0, 0, yOffset)
-        playerFrame.Size = UDim2.new(1, 0, 0, 45)
-        playerFrame.BackgroundColor3 = Color3.new(0, 0, 0)
-        playerFrame.Parent = playerScrollFrame
-
-        local nameLabel = Instance.new("TextLabel")
-        nameLabel.Name = "PlayerLabel"
-        nameLabel.Text = player.Name
-        nameLabel.Position = UDim2.new(0, 10, 0, 0)
-        nameLabel.Size = UDim2.new(0.6, 0, 1, 0)
-        nameLabel.BackgroundTransparency = 1
-        nameLabel.TextColor3 = Color3.new(1, 1, 1)
-        nameLabel.Font = Enum.Font.SourceSans
-        nameLabel.FontSize = Enum.FontSize.Size18
-        nameLabel.Parent = playerFrame
-
-        local teleportButton = Instance.new("TextButton")
-        teleportButton.Name = "TeleportButton"
-        teleportButton.Text = "Teleport"
-        teleportButton.Position = UDim2.new(0.7, 10, 0, 0)
-        teleportButton.Size = UDim2.new(0.3, -20, 1, 0)
-        teleportButton.BackgroundColor3 = Color3.new(0.8, 0, 0)
-        teleportButton.BorderColor3 = Color3.new(1, 1, 1)
-        teleportButton.TextColor3 = Color3.new(1, 1, 1)
-        teleportButton.Font = Enum.Font.SourceSans
-        teleportButton.FontSize = Enum.FontSize.Size18
-        teleportButton.Parent = playerFrame
-
-        teleportButton.MouseButton1Click:Connect(function()
-            teleportToPlayer(player)
-        end)
-
-        yOffset = yOffset + 55
+-- Function to handle dragging on PC
+local function onMouseDrag(input)
+    if isDragging then
+        local newPosition = UDim2.new(0, input.Position.X - offset.X, 0, input.Position.Y - offset.Y)
+        mainFrame.Position = newPosition
     end
 end
+
+-- Function to handle touch dragging on mobile
+local function onTouchDrag(input)
+    if isDragging then
+        local newPosition = UDim2.new(0, input.Position.X - offset.X, 0, input.Position.Y - offset.Y)
+        mainFrame.Position = newPosition
+    end
+end
+
+-- Mouse events for dragging on PC
+mainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        offset = input.Position - mainFrame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                isDragging = false
+            end
+        end)
+    end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        onMouseDrag(input)
+    end
+end)
+
+-- Touch events for dragging on mobile
+mainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        isDragging = true
+        offset = input.Position - mainFrame.Position
+    end
+end)
+
+game:GetService("UserInputService").TouchMoved:Connect(function(input, gameProcessed)
+    if isDragging and not gameProcessed then
+        onTouchDrag(input)
+    end
+end)
+
+game:GetService("UserInputService").TouchEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        isDragging = false
+    end
+end)
 
 -- Call the function initially and whenever a player joins or leaves
 updatePlayerList()
