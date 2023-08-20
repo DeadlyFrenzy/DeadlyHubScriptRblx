@@ -33,6 +33,14 @@ wait(0.2)
 
 --Main Buttons
 
+MainSection:NewButton("Player List", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/player%20list%20chatgpt%20test"))()
+end)
+
+MainSection:NewButton("Waypoint", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/WaypointScript"))()
+end)
+
 MainSection:NewButton("OwlHub ESP", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))()
 end)
