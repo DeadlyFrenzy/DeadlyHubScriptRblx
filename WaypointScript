@@ -1,0 +1,101 @@
+local player = game.Players.LocalPlayer
+local waypoints = {}
+
+local dragging = false
+local dragOffset = Vector2.new(0, 0)
+
+local function createWaypoint()
+    local lastWaypoint = waypoints[#waypoints]
+    if lastWaypoint then
+        lastWaypoint:Destroy()
+    end
+
+    local waypoint = Instance.new("Part")
+    waypoint.Size = player.Character.HumanoidRootPart.Size
+    waypoint.Anchored = true
+    waypoint.CanCollide = false
+    waypoint.Transparency = 0.5
+    waypoint.BrickColor = BrickColor.new("Bright red")  -- Set brick color to red
+    waypoint.Position = player.Character.HumanoidRootPart.Position
+    waypoint.Parent = workspace
+    table.insert(waypoints, waypoint)
+end
+
+local function teleportToWaypoint()
+    local lastWaypoint = waypoints[#waypoints]
+    if lastWaypoint then
+        local humanoidRootPart = player.Character:WaitForChild("HumanoidRootPart")
+        humanoidRootPart.CFrame = lastWaypoint.CFrame + Vector3.new(0, 10, 0)
+    end
+end
+
+local gui = Instance.new("ScreenGui")
+gui.Parent = player.PlayerGui
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 100, 0, 50)  -- Adjusted size
+frame.Position = UDim2.new(0, 10, 0, 10)
+frame.BackgroundTransparency = 0.5
+frame.BackgroundColor3 = Color3.new(0, 0, 0)  -- Set background color to black
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+
+local buttonBackground = Instance.new("Frame")
+buttonBackground.Size = UDim2.new(0.9, 0, 0.5, 0)  -- Adjusted size
+buttonBackground.Position = UDim2.new(0.05, 0, 0.25, 0)  -- Adjusted position
+buttonBackground.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)  -- Set background color to gray
+buttonBackground.Parent = frame
+
+local createWaypointButton = Instance.new("TextButton")
+createWaypointButton.Text = "Set"  -- Changed button text to "Set"
+createWaypointButton.Size = UDim2.new(0.45, 0, 1, 0)  -- Adjusted size
+createWaypointButton.Position = UDim2.new(0, 0, 0, 0)  -- Adjusted position
+createWaypointButton.BackgroundColor3 = Color3.new(1, 0, 0)  -- Set button color to red
+createWaypointButton.Parent = buttonBackground
+
+local teleportButton = Instance.new("TextButton")
+teleportButton.Text = "TP"  -- Changed button text to "TP"
+teleportButton.Size = UDim2.new(0.45, 0, 1, 0)  -- Adjusted size
+teleportButton.Position = UDim2.new(0.55, 0, 0, 0)  -- Adjusted position
+teleportButton.BackgroundColor3 = Color3.new(1, 0, 0)  -- Set button color to red
+teleportButton.Parent = buttonBackground
+
+createWaypointButton.MouseButton1Click:Connect(createWaypoint)
+teleportButton.MouseButton1Click:Connect(teleportToWaypoint)
+
+local createWaypointKey = Enum.KeyCode.Q
+local userInputService = game:GetService("UserInputService")
+
+userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    if not gameProcessedEvent and input.KeyCode == createWaypointKey then
+        createWaypoint()
+    end
+end)
+
+local teleportKey = Enum.KeyCode.E
+
+userInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    if not gameProcessedEvent and input.KeyCode == teleportKey then
+        teleportToWaypoint()
+    end
+end)
+
+frame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragOffset = frame.Position - UDim2.new(0, input.Position.X, 0, input.Position.Y)
+        dragging = true
+    end
+end)
+
+userInputService.InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        frame.Position = UDim2.new(0, input.Position.X + dragOffset.X, 0, input.Position.Y + dragOffset.Y)
+    end
+end)
+
+userInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = false
+    end
+end)
