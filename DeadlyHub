@@ -262,6 +262,53 @@ GamesSection:NewLabel("Slap Battles, And MUCH MORE!")
 GamesSection:NewButton("IceHub", "", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
 end)
+
+GamesSection:NewButton("unfair", "", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
+end)
+
+GamesSection:NewButton("fling things & people", "", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Mix2552z/-Script-Fling-Things-and-People/main/Fing%20Things%20and%20People"))()
+end)
+
+GamesSection:NewButton("fling things & people", "", function()
+    local bodyvel_Name = "FlingVelocity"
+local userinputs = game:GetService("UserInputService")
+local w = game:GetService("Workspace")
+local r = game:GetService("RunService")
+local d = game:GetService("Debris")
+local strength = 850
+
+w.ChildAdded:Connect(function(model)
+	if model.Name == "GrabParts" then
+		local part_to_impulse = model["GrabPart"]["WeldConstraint"].Part1
+
+		if part_to_impulse then
+			print("Part found!")
+
+			local inputObj
+			local velocityObj = Instance.new("BodyVelocity", part_to_impulse)
+			
+			model:GetPropertyChangedSignal("Parent"):Connect(function()
+				if not model.Parent then
+					if userinputs:GetLastInputType() == Enum.UserInputType.MouseButton2 then
+						print("Launched!")
+						velocityObj.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+						velocityObj.Velocity = workspace.CurrentCamera.CFrame.lookVector * strength
+						d:AddItem(velocityObj, 1)
+					elseif userinputs:GetLastInputType() == Enum.UserInputType.MouseButton1 then
+						velocityObj:Destroy()
+						print("Cancel Launch!")
+					else
+						velocityObj:Destroy()
+						print("No two keys pressed!")
+					end
+				end
+			end)
+		end
+	end
+end)
+end)
  
 GamesSection:NewButton("Jenga/Blocks n' Props", nil, function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/DeadlyFrenzy/DeadlyHubScriptRblx/main/Jenga'))()
